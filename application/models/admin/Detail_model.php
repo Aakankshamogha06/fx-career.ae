@@ -71,6 +71,20 @@ public function online_course()
         return 0;
     }
 }
+public function online_course_index()
+{
+    $result = $this->db->query("SELECT *,
+       (SELECT category_name FROM course_category WHERE detail.category = course_category.id) AS category
+		FROM detail
+		WHERE mode = 'online'
+		LIMIT 3;");
+
+    if ($result->num_rows() > 0) {
+        return $result->result();
+    } else {
+        return 0;
+    }
+}
 public function onlineBasic($id)
 {
 $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category

@@ -25,6 +25,7 @@ class Website extends CI_Controller
         $data['gallery_view']= $this->gallery_model->gallery();
         $data['teachers'] = $this->teacher_model->teacher();
         $data['blog_detail_view']= $this->blog_detail_model->blog_detail();
+        $data['course_details_view'] = $this->detail_model->online_course_index(); 
         $this->load->view('frontend/include/header');
         $this->load->view('frontend/index',$data);
         $this->load->view('frontend/include/newsletter');
@@ -36,6 +37,7 @@ class Website extends CI_Controller
     {
         $data['teachers'] = $this->teacher_model->teacher_view();
         $data['gallery_view']= $this->gallery_model->gallery();
+        $data['course_details_view'] = $this->detail_model->online_course_index(); 
         $this->load->view('frontend/include/header');
         $this->load->view('frontend/about-us',$data);
         $this->load->view('frontend/include/newsletter');

@@ -1,0 +1,128 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  08. class css start
+/*----------------------------------------*/
+.it-class{
+    &-item {
+        border-radius: 10px;
+        &:hover {
+            & .it-class-rate {
+                & span {
+                    background-color: var(--it-theme-4);
+                }
+            }
+            & .it-class-meta-box {
+                background-color: var(--it-theme-5);
+            }
+            & .it-class-thumb{
+                border-radius: 10px 10px 0 0;
+                & img{
+                    transform: scale(1.1) rotate(-2deg);
+                }
+            }
+
+        }
+        &.active {
+            & .it-class-rate {
+                & span {
+                    background-color: var(--it-theme-4);
+                }
+            }
+            & .it-class-meta-box {
+                background-color: var(--it-theme-5);
+            }
+        }
+    }
+    &-thumb {
+        border-radius: 10px 10px 0 0;
+        & img {
+            border-radius: 10px 10px 0 0;
+            width: 100%;
+            transition: .9s;
+        }
+    }
+    &-rate {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        & span {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            color: #FFF;
+            font-size: 21px;
+            font-weight: 600;
+            text-align: center;
+            font-family:var(--it-ff-heading);
+            background-color: var(--it-theme-5);
+            transition: .3s;
+        }
+    }
+    &-title {
+        font-size: 21px;
+        font-weight: 600;
+        line-height:1.4;
+        padding-bottom: 5px;
+        text-transform: uppercase; 
+        transition: .3s;
+        &:hover {
+            color: var(--it-theme-4);
+        }
+    }
+    &-text {
+        background-color: #F3F5F5;
+        padding: 30px 50px;  
+        & p {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 32px;  
+            margin-bottom: 0; 
+        }      
+    }
+    &-meta {
+        & i {
+            font-size: 18px;
+            display: block;
+            color: var(--it-common-white);
+        }
+        & span {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 30px; 
+            color: var(--it-common-white);
+        }
+        &-box {
+            padding: 5px 62px;
+            padding-top: 15px;
+            background-color: var(--it-theme-4);
+            border-radius:0 0 10px 10px;
+            transition: .3s;
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            top: 150px;
+            left: 265px;
+            animation: itleftright 1s infinite alternate;
+        }
+        &-2 {
+            position: absolute;
+            left: 108px;
+            bottom: 145px;
+            animation: itupdown 0.8s infinite alternate;
+            @media #{$xxl}{
+                bottom: 30px;
+            }
+        }
+        &-3 {
+            position: absolute;
+            right: 105px;
+            bottom: 400px;
+            animation: itleftright 1s infinite alternate;
+        }
+    }
+}

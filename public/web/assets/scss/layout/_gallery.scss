@@ -1,0 +1,88 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  18. gallery css start
+/*----------------------------------------*/
+.it-gallery {
+    &-item {
+        margin-bottom: 35px;
+        &:hover {
+            & .it-gallery-thumb {
+                &::after{
+                    -webkit-transform: perspective(400px) rotateX(0deg) scaleY(1.0);
+                    -ms-transform: perspective(400px) rotateX(0deg) scaleY(1.0);
+                    transform: perspective(400px) rotateX(0deg) scaleY(1.0);
+                    transition-delay: .1s;
+                    transition-timing-function: ease-in-out;
+                    transition-duration: .7s;
+                    transition-property: all;
+                }
+            }
+            & .it-gallery-icon {
+                transform: translate(-50%,-50%) scale(1);
+            }
+        }
+    }
+    &-thumb {
+        position: relative;
+        overflow: hidden;
+        & img{
+            width: 100%;
+        }
+        &::after{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: "";
+            background-color: rgba(14, 42, 70, 0.8);
+            -webkit-transform: perspective(400px) rotateX(90deg) scaleY(0.5);
+            -ms-transform: perspective(400px) rotateX(90deg) scaleY(0.5);
+            transform: perspective(400px) rotateX(90deg) scaleY(0.5);
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+            transition-delay: .1s;
+            transition-timing-function: ease-in-out;
+            transition-duration: .5s;
+            transition-property: all;
+            z-index: 1;
+        }
+    }
+    &-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0);
+        z-index: 2;
+        transition: .5s;
+        & a {
+            color: var(--it-common-white);
+            font-size: 40px;
+            display: inline-block;            
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            top: 160px;
+            left: 135px;
+            animation: itswing 1s forwards infinite alternate;
+            @media #{$xxl}{
+                top: 80px;
+            }
+        }
+        &-2 {
+            position: absolute;
+            top: 115px;
+            right: 120px;
+            animation: itswing 1s forwards infinite alternate;
+        }
+        &-3 {
+            position: absolute;
+            bottom: 80px;
+            right: 130px;
+        }
+    }
+}

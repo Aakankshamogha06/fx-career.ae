@@ -1,0 +1,60 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  11. cta css start
+/*----------------------------------------*/
+.it-cta {
+    &-height {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @media #{$xxxl}{
+            left: -8%;
+        }
+        @media #{$xxl}{
+            left: -8%;
+        }
+        @media #{$xl}{
+            left: -11%;
+        }
+    }
+    &-title {
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 1.3; 
+        margin-left: 300px;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        color: var(--it-common-white);
+        @media #{$xxxl}{
+            font-size: 37px;
+        }
+        @media #{$xxl}{
+            font-size: 35px;
+            margin-left: 400px;
+        }
+        @media #{$xl}{
+            font-size: 30px;
+            margin-left: 400px;
+        }
+        @media #{$lg}{                 
+            margin-left: 0;
+            font-size: 28px;
+        }
+        @media #{$md}{                 
+            margin-left: 0;
+            font-size: 25px;
+        }
+        @media #{$xs}{                 
+            margin-left: 0;
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+    }
+}

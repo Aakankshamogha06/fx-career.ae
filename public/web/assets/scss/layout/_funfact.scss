@@ -1,0 +1,186 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  17. funfact css start
+/*----------------------------------------*/
+
+.it-funfact{
+    &-bg-wrap {
+        padding: 55px 70px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @media #{$xl,$lg,$md,$xs}{                 
+            padding: 55px 25px;
+        }
+    }
+    &-item {
+        @media #{$md,$xs}{                 
+           margin-bottom: 30px;
+        }
+    }
+    &-icon{
+        & span{
+            height: 78px;
+            width: 78px;
+            line-height: 89px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 20px;
+            background-color: var(--it-common-white);
+            color: var(--it-common-black);
+            font-size: 38px;
+            @media #{$lg}{                 
+                height: 65px;
+                width: 65px;
+                line-height: 78px;
+                text-align: center;
+                display: inline-block;
+                margin-right: 15px;
+            }        
+        }
+    }
+    &-content{
+        line-height: 0;
+        & h6{
+            font-size: 39px;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--it-common-black);
+            text-transform: capitalize;
+            margin-bottom: 15px;
+            @media #{$xl}{                 
+              font-size: 35px;
+            }
+            @media #{$lg}{                 
+              font-size: 30px;
+            }
+            @media #{$md,$xs}{                 
+              font-size: 35px;
+            }
+            @media #{$sm}{                 
+                font-size: 29px;
+                margin-bottom: 5px;
+            }
+            & i{
+                font-style: normal;
+            }
+        }
+        & span{
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1;
+            text-transform: capitalize;
+            color: var(--it-common-black);
+            @media #{$xl}{                 
+                font-size: 14px;
+            }
+            @media #{$lg}{                 
+                font-size: 11px;
+            }
+            @media #{$md,$xs}{                 
+                font-size: 14px;
+            }
+            @media #{$sm}{                 
+                font-size: 12px;
+            }
+        }
+    }
+}
+.it-funfact-4{
+    &-wrap{
+        height: 250px;
+        width: 250px;
+        line-height: 250px;
+        text-align: center;
+        border: 1px solid var(--it-common-white);
+        border-radius: 50%;
+        @media #{$lg}{
+            height: 220px;
+            line-height: 220px;
+        }
+    }
+    &-item{
+        & h4{
+            font-size: 45px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: var(--it-common-white);
+            font-family: var(--it-ff-poppins);
+        }
+        & p{
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--it-common-yellow); 
+            margin-bottom: 0;
+        }
+    }
+}
+.it-funfact-5 { 
+    &-bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-item {
+        padding: 55px 15px 45px 15px;
+        border-radius: 5px;
+        background-color: var(--it-common-white);
+    }
+    &-icon {
+        height: 87px;
+        width: 87px;
+        border-radius: 50%;
+        line-height: 102px;
+        text-align: center;
+        margin: 0 auto;
+        background-color: var(--it-common-yellow-2);
+        position: relative;
+        & span{
+            font-size: 45px;
+            color: var(--it-common-white);
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            transform: scale(1.15);
+            border: 1px dashed var(--it-common-yellow-2);
+        }
+    }
+    &-number {
+        font-size: 49px;
+        font-weight: 700;
+        margin-bottom: 0;
+        text-transform: capitalize;
+    }
+    &-content {
+        & span {
+            font-size: 21px;
+            font-weight: 500;
+            text-transform: capitalize;
+            color: #4D5756;
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            bottom: 140px;
+            left: 100px;
+            animation: rotate2 12s linear infinite;
+            @media #{$xxl}{
+                bottom: 0;
+                left: 0;
+            }
+        }
+        &-2 {
+            position: absolute;
+            top: 95px;
+            right: 140px;
+            animation: rotate2 12s linear infinite;
+        }
+    }
+}

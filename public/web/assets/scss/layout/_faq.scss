@@ -1,0 +1,52 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  14. faq css start
+/*----------------------------------------*/
+.it-faq {
+    &-wrap {
+        margin-right: -20px;
+        transform: translateX(-40px);
+        @media #{$xl,$lg}{
+            margin-right: 0;
+            transform: translateX(0px);
+        }
+        @media #{$md,$xs}{
+            margin-right: 0;
+            margin-top: 50px;
+            transform: translateX(0px);
+        }
+    }
+    &-thumb {
+        & img {
+            border-radius: 5px;
+            max-width: inherit;
+            @media #{$xl,$lg}{
+                max-width: 100%;
+            }
+            @media #{$md,$xs}{
+                width: 100%;
+            }
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            bottom: 160px;
+            left: 80px;
+            animation: itswing 1s forwards infinite alternate;
+        }
+        &-2 {
+            position: absolute;
+            top: 15px;
+            right: 155px;
+            animation: itswing 1s forwards infinite alternate;
+            @media #{$xxl}{
+                top: -50px;
+            }
+            @media #{$xl}{
+                top: -80px;
+            }
+        }
+    }
+}

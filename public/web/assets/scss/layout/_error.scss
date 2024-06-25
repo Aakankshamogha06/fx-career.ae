@@ -1,0 +1,41 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  12. error css start
+/*----------------------------------------*/
+.it-error{
+    &-title {
+        font-size: 45px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        @media #{$xl,$lg}{
+            font-size: 36px;
+        }
+        @media #{$md}{
+            font-size: 34px;
+        }
+        @media #{$xs}{
+            font-size: 31px;
+        }
+    }
+    &-content {
+        & p {
+            @media #{$xl,$lg}{
+                font-size: 14px;
+            } 
+            @media #{$md}{
+                padding-right: 150px;
+                font-size: 14px;
+            }
+            @media #{$xs}{
+                font-size: 14px;
+            }
+        }  
+    }
+    &-thumb {
+        @media #{$md,$xs}{
+            margin-bottom: 50px;
+        } 
+    }
+}

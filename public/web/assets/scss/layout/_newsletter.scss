@@ -1,0 +1,113 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  22. newsletter css start
+/*----------------------------------------*/
+
+.it-newsletter {
+    &-height{
+        height: 295px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        @media #{$lg,$md}{                 
+            height: 250px;
+        }
+        @media #{$xs}{                 
+            height: 285px;
+        }
+    }
+    &-left {
+        @media #{$xs}{                 
+            margin-bottom: 30px;
+        }
+        & .it-section-title{
+            @media #{$md}{                 
+                font-size: 30px;
+            }
+            @media #{$xs}{                 
+                font-size: 25px;
+                padding-bottom: 10px;
+            }
+        }
+        & span {
+            color: var(--it-common-white);
+            font-size: 18px;
+            @media #{$lg,$md,$xs}{                 
+                font-size: 15px;
+            }
+        }
+    }
+    &-right {
+        margin-left: 83px;
+        @media #{$lg,$md,$xs}{                 
+            margin-left: 0;
+        }
+        & input {
+            border-radius: 10px;
+            background-color: var(--it-common-white);
+            border: none;
+            padding: 0 25px;
+            padding-right: 210px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 16px;
+            @media #{$lg}{                 
+                height: 65px;
+                line-height: 65px;
+                font-size: 14px;
+            }
+            @media #{$md,$xs}{   
+                height: 65px;
+                line-height: 65px;
+                font-size: 14px;              
+                padding-right: 155px;
+            }
+        }
+        & button {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            @media #{$lg,$md,$xs}{                 
+                right: 5px;
+            }
+            &.it-btn {
+                height: 58px;
+                line-height: 58px;
+                @media #{$md,$xs}{                 
+                    height: 55px;
+                    line-height: 55px;
+                    font-size: 12px;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        &-2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        &-3 {
+            position: absolute;
+            bottom: 15px;
+            left: 150px;
+            animation: rotate2 8s linear infinite;
+        }
+        &-4 {
+            position: absolute;
+            top: 15px;
+            right: 150px;
+            animation: rotate2 8s linear infinite;
+        }
+    }
+}

@@ -1,0 +1,300 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  16. footer css start
+/*----------------------------------------*/
+
+.it-footer{
+    &-bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-text {
+        & p {
+            color: var(--it-common-white);     
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px;
+            @media #{$xl}{                 
+                font-size: 15px;
+            }
+            @media #{$lg,$md,$xs}{                 
+                font-size: 15px;
+                & br {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-social {
+       & a {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #4D5756;
+            line-height: 45px;
+            text-align: center;
+            color: var(--it-common-white);
+            transition: .3s;
+            &:not(:last-child){
+                margin-right: 7px;
+            }
+            &:hover {
+                background-color: var(--it-theme-1);
+                color: var(--it-common-white);
+            }
+       }
+    }
+    &-title {
+        font-size: 22px;
+        font-weight: 700;
+        padding-top: 10px;
+        text-transform: capitalize;
+        color:var(--it-common-white);
+        margin-bottom: 30px;
+        @media #{$xl,$lg,$md,$xs}{                 
+            font-size: 20px;
+        }
+    }
+    &-list {
+        & ul {
+            & li {
+                list-style-type: none;
+                position: relative;
+                padding-left: 30px;
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                & a {
+                    color: var(--it-common-white);
+                    font-size: 17px;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    display: inline-block;
+                    display: inline;
+                    background-size: 0% 1px, 0 1px;
+                    background-position: 100% 100%, 0 100%;
+                    background-repeat: no-repeat;
+                    transition: background-size 0.3s linear;
+                    background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+                    @media #{$xl,$lg,$md,$xs}{                 
+                       font-size: 15px;
+                    }
+                    &:hover{
+                        background-size: 0% 1px, 100% 1px;
+                    }
+                    & i {
+                        display: inline-block;
+                        position: absolute;
+                        top: 6px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &-thumb {
+        & img {
+            border-radius: 5px;
+        }
+    }
+    &-top{
+        &-icon{
+            & span {
+                font-size: 25px;
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                display: inline-block;
+                text-align: center;
+                line-height: 70px;
+                margin-right: 30px;
+                border: 1px solid rgba(244, 244, 244, 0.5);
+                background-color:rgba(255, 255, 255, 0.05) ;
+                color: var(--it-common-white);
+                @media #{$lg}{                 
+                    font-size: 20px;
+                    height: 50px;
+                    width: 50px;
+                    line-height: 50px;
+                }
+                @media #{$md,$xs}{                 
+                    font-size: 20px;
+                    height: 50px;
+                    width: 50px;
+                    line-height: 50px;
+                    margin-right: 15px;
+                }
+                & .phone {
+                    transform:rotate(89deg);
+                }
+            }
+        }
+        &-text {
+            & span {
+                font-size: 15px;
+                font-weight: 500;
+                display: block;
+                margin-bottom: 7px;
+                color: var(--it-theme-4);
+                @media #{$md,$xs}{                 
+                    font-size: 12px;
+                }
+            }
+            & a {
+                color: var(--it-common-white);
+                font-family: var(--it-ff-heading);
+                font-size: 26px;
+                font-weight: 700;
+                background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+                display: inline;
+                background-size: 0% 1px, 0 1px;
+                background-position: 100% 100%, 0 100%;
+                background-repeat: no-repeat;
+                transition: background-size 0.3s linear;
+                &:hover{
+                    background-size: 0% 1px, 100% 1px;
+                }
+                @media #{$xl} {
+                    font-size: 20px;
+                }
+                @media #{$lg} {
+                    font-size: 18px;
+                }
+                @media #{$md,$xs}{                 
+                    font-size: 13px;
+                }
+            }
+        }
+        &-info {
+            position: relative;
+            padding: 60px 0;
+            @media #{$xs}{
+                padding: 15px 0;
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                top: 0;
+                right: -24px;
+                width: 1px;
+                height: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                @media #{$lg,$md,$xs}{                 
+                    display: none;
+                }
+            }
+            &.border-none {
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+    &-border {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+.it-footer-top-col-2 {
+    padding-left: 75px;
+    @media #{$lg}{                 
+        padding-left: 50px;
+    }
+    @media #{$md,$xs}{                 
+        padding-left: 0;
+    }
+    &.it-footer-top-info {
+        &::after {
+            right: -55px;
+        }
+    }
+}
+.it-copyright{
+    &-height {
+        background-color: #222;
+        padding: 19px 0;
+    }
+    &-text{
+        & p {
+            color: var(--it-common-white);
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 0;
+            @media #{$xl,$lg,$md,$xs}{                 
+                font-size: 14px;
+            }
+            & a {
+                font-weight: 700;
+                color: var(--it-theme-1);
+                &.blue {
+                    color: var(--it-theme-4);
+                }
+            }
+        }
+    }
+    &-right {
+        & a {
+            color: var(--it-common-white);
+            font-size: 17px;
+            font-weight: 400;
+            transition: .3s;
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+            &:hover {
+                color: var(--it-theme-4);
+            }
+        }
+    }
+}
+
+.footer-col-2 {
+    padding-left: 35px;
+    @media #{$md,$xs}{
+        padding-left: 0;
+    }
+}
+.footer-col-3 {
+    margin-left: -15px;
+
+    @media #{$lg,$md,$xs}{
+        margin-left: 0;
+    }
+}
+.footer-col-4 {
+    margin-left: 35px;
+    @media #{$lg,$md,$xs}{
+        margin-left: 0;
+    }
+}
+.footer-col-6 {
+    margin-left: -30px;
+    @media #{$lg,$md,$xs}{
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+.footer-col-7 {
+    transform: translateX(25px);
+    @media #{$xs}{
+        transform: translateX(0px);
+    }
+}
+.footer-col-8 {
+    padding-left: 40px;
+    @media #{$lg,$xs}{
+        padding-left: 0;
+    }
+}
+.it-footer-style-5 {
+    & .it-footer-social {
+        & a {
+             &:hover {
+                 background-color: var(--it-theme-4);
+                 color: var(--it-common-white);
+             }
+        }
+     }
+}

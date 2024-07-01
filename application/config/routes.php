@@ -257,6 +257,8 @@ $route['trade-idea/(:any)'] = 'website/trade_idea_detail/$1';
 $route['trade-idea-detail'] = 'website/trade_idea_detail';
 
 
+$route['abc'] = 'website/abc';
+
 
 
 

@@ -21,7 +21,10 @@ class Website extends CI_Controller
         $this->load->model('admin/trade_idea_model', 'trade_idea_model');
         $this->load->helper('url');
     }
-
+    public function abc()
+    {
+        $this->load->view('frontend/abc');;
+    }
     public function index()
     {
         $data['gallery_view'] = $this->gallery_model->gallery();

@@ -208,6 +208,21 @@ $route['contact_us/edit_contact_us/(:any)'] = 'admin/contact_us/contact_us_edit/
 $route['contact_us/contact_us_update_data'] = 'admin/contact_us/contact_us_update_data';
 $route['contact_us/contact_us_delete/(:any)'] = 'admin/contact_us/contact_us_delete/$1';
 
+// one_to_one_session ****************
+$route['one_to_one_session/add_one_to_one_session'] = 'admin/one_to_one_session/add_one_to_one_session';
+$route['one_to_one_session/one_to_one_session_submit_data'] = 'admin/one_to_one_session/one_to_one_session_submit_data';
+$route['one_to_one_session/view_one_to_one_session']        = 'admin/one_to_one_session/one_to_one_session_view';
+$route['one_to_one_session/edit_one_to_one_session/(:any)'] = 'admin/one_to_one_session/one_to_one_session_edit/$1';
+$route['one_to_one_session/one_to_one_session_update_data'] = 'admin/one_to_one_session/one_to_one_session_update_data';
+$route['one_to_one_session/one_to_one_session_delete/(:any)'] = 'admin/one_to_one_session/one_to_one_session_delete/$1';
+
+// trade_idea ****************
+$route['trade_idea/add_trade_idea'] = 'admin/trade_idea/add_trade_idea';
+$route['trade_idea/trade_idea_submit_data'] = 'admin/trade_idea/trade_idea_submit_data';
+$route['trade_idea/view_trade_idea']        = 'admin/trade_idea/trade_idea_view';
+$route['trade_idea/edit_trade_idea/(:any)'] = 'admin/trade_idea/trade_idea_edit/$1';
+$route['trade_idea/trade_idea_update_data'] = 'admin/trade_idea/trade_idea_update_data';
+$route['trade_idea/trade_idea_delete/(:any)'] = 'admin/trade_idea/trade_idea_delete/$1';
 
 
 
@@ -238,7 +253,8 @@ $route['blog-details'] = 'website/blog_details';
 $route['book-slot'] = 'website/book_slot';
 $route['mentor'] = 'website/mentor';
 $route['mentor/(:any)'] = 'website/mentor_details/$1';
-
+$route['trade-idea/(:any)'] = 'website/trade_idea_detail/$1';
+$route['trade-idea-detail'] = 'website/trade_idea_detail';
 
 
 

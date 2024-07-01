@@ -18,6 +18,7 @@ class Website extends CI_Controller
         $this->load->model('admin/user_model', 'user_model');
         $this->load->model('admin/teacher_model', 'teacher_model');
         $this->load->model('admin/analysis_detail_model', 'analysis_detail_model');
+        $this->load->model('admin/trade_idea_model', 'trade_idea_model');
         $this->load->helper('url');
     }
 
@@ -69,9 +70,20 @@ class Website extends CI_Controller
     }
     public function trade_idea()
     {
+        $data['trade_idea_view'] = $this->trade_idea_model->trade_idea_view();
         $data['gallery_view'] = $this->gallery_model->gallery();
         $this->load->view('frontend/include/header');
-        $this->load->view('frontend/trade-idea');
+        $this->load->view('frontend/trade-idea',$data);
+        $this->load->view('frontend/include/newsletter');
+        $this->load->view('frontend/include/footer', $data);
+    }
+    public function trade_idea_detail()
+    {
+        $data['trade_idea_detail'] = $this->trade_idea_model->trade_idea_data_nm();
+        $data['trade_ideas'] = $this->trade_idea_model->get_recent_trade_idea(3);
+        $data['gallery_view'] = $this->gallery_model->gallery();
+        $this->load->view('frontend/include/header');
+        $this->load->view('frontend/trade-idea-detail', $data);
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }

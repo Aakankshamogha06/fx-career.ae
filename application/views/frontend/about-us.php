@@ -365,7 +365,7 @@
                            </div>
                         </div> -->
                         <div class="it-team-3-author-box">
-                           <h4 class="it-team-3-title"><a href="<?= base_url() ?>teacher/<?= str_replace(' ', '-', strtolower($row->teacher_name)); ?>"><?= $row->teacher_name ?></a></h4>
+                           <h4 class="it-team-3-title"><a href="<?= base_url() ?>mentor/<?= str_replace(' ', '-', strtolower($row->teacher_name)); ?>"><?= $row->teacher_name ?></a></h4>
                            <span><?= $row->designation ?></span>
                         </div>
                      </div>

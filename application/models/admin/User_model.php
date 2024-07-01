@@ -5,6 +5,10 @@
 			$this->db->insert('users', $data);
 			return true;
 		}
+		public function insert_user($data)
+		{
+			return $this->db->insert('users', $data);
+		}
 
 		public function get_all_users(){
 			$query = $this->db->query("SELECT *,(SELECT role_name FROM `role` where id=is_admin) as role_name  FROM `users`;");

@@ -28,19 +28,23 @@
       <div class="it-course-area it-course-style-2 it-course-style-5 p-relative pt-120 pb-120">           
          <div class="container">
             <div class="row justify-content-center">
+            <?php foreach($ebook_view as $row):?>
                <div class="col-xl-6 col-lg-6 mb-30">
+                  
                   <div class="it-course-2-wrap d-flex align-items-center">
                      <div class="it-course-thumb  p-relative">
-                        <a href="course-details.html"><img src="<?=base_url()?>public/web/assets/img/ebooks/what-is-investment.png" alt=""></a>                       
+                        <a href="<?=base_url()?>uploads/ebook_pdf/<?=$row->ebook_pdf?>"><img src="<?=base_url()?>uploads/ebook_image/<?=$row->ebook_image?>" alt="" style="height: 200px;"></a>                       
                      </div>
                      <div class="it-course-content">
-                        <h4 class="it-course-title pb-15 mb-0"><a href="course-details.html">What is Investment</a></h4>
-                        <p class="line-clamp-3">The meaning of investment is putting your money into an asset that can grow in value or produce income or both.</p>
+                        <h4 class="it-course-title pb-15 mb-0"><a href="<?=base_url()?>uploads/ebook_pdf/<?=$row->ebook_pdf?>"><?=$row->ebook_name?></a></h4>
+                        <p class="line-clamp-3"><?=$row->ebook_desc?></p>
 
                      </div>
                   </div>
+                 
                </div>
-               <div class="col-xl-6 col-lg-6 mb-30">
+               <?php endforeach;?>
+               <!-- <div class="col-xl-6 col-lg-6 mb-30">
                   <div class="it-course-2-wrap d-flex align-items-center">
                      <div class="it-course-thumb  p-relative">
                         <a href="course-details.html"><img src="<?=base_url()?>public/web/assets/img/ebooks/indicator.png" alt=""></a>
@@ -92,7 +96,7 @@
 
                      </div>
                   </div>
-               </div>
+               </div> -->
 
             </div>
          </div>

@@ -6504,7 +6504,7 @@ input[type=color] {
   font-style: normal;  
   padding: 10px 20px;
   font-weight: 400;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .it-signup-input input, .it-signup-input select {
   border-radius: 5px;
@@ -6512,14 +6512,14 @@ input[type=color] {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .it-signup-input input::placeholder {
   color: #0E2A46;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .it-signup-text span {
   color: #4D5756;

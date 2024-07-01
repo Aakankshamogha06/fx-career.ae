@@ -12,7 +12,7 @@
                      </div>
                      <div class="it-breadcrumb-list-wrap">
                         <div class="it-breadcrumb-list">
-                           <span><a href="index.html">home</a></span>
+                           <span><a href="<?=base_url()?>">home</a></span>
                            <span class="dvdr">//</span>
                            <span>Login</span>
                         </div>
@@ -31,29 +31,35 @@
          
                <div class="row">
                   <div class="col-xl-6 col-lg-6">
-                     <form action="#">
+                  <?php echo form_open(base_url('admin/auth/login')); ?>
                         <div class="it-signup-wrap">
                         <div class="it-category-title-box">
                         <span class="sub-head mb-3">Login</span>
                         <h4 class="it-section-title mb-4">Welcome Back
                         </h4>
                      </div>
+                     <?php if (isset($msg) || validation_errors() !== ''): ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?= validation_errors(); ?>
+                                    <?= isset($msg) ? $msg : ''; ?>
+                                </div>
+                            <?php endif; ?>
                            <div class="it-signup-input-wrap">
                               <div class="it-signup-input mb-20">
-                                 <input type="email" placeholder="Email *">
+                                 <input type="email" name="email" placeholder="Email">
                               </div>
                               <div class="it-signup-input mb-20">
-                                 <input type="password" placeholder="Password *">
+                                 <input type="password" name="password" placeholder="Password *">
                               </div>
                            </div>                          
                            <div class="it-signup-btn mb-40">
-                              <button class="it-btn large">Login</button>
+                              <button name="submit" class="it-btn large">Login</button>
                            </div>
                            <div class="it-signup-text">
-                              <span>Don't have an account? <a href="register">Register</a></span>
+                              <span>Don't have an account? <a href="<?=base_url()?>register">Register</a></span>
                            </div>
                         </div>
-                     </form>
+                        <?php echo form_close(); ?>
                   </div>
                   <div class="col-xl-6 col-lg-6  align-self-center">
                   <img src="<?=base_url()?>public/web/assets/img/login.png" alt="" class="w-75">

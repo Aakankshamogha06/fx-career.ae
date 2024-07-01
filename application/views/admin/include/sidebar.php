@@ -11,7 +11,7 @@ $role = $this->session->userdata('role_name');
         <nav class="navbar bg-secondary navbar-dark">
             <!-- <a href="<?= base_url() ?>admin/dashboard" class="navbar-brand mx-4 mb-3">
                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>FXCAREERS</h3>
-            </a> --><br><br><br>
+            </a> --><br><br><br><br>
             <div class="d-flex align-items-center ms-4 mb-4">
                 <div class="position-relative">
                     <img class="rounded-circle" src="<?= base_url() ?>public/admin/img/profile.png" alt="" style="width: 40px; height: 40px;">

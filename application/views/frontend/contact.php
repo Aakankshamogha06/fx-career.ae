@@ -12,7 +12,7 @@
                      </div>
                      <div class="it-breadcrumb-list-wrap">
                         <div class="it-breadcrumb-list">
-                           <span><a href="index.html">home</a></span>
+                           <span><a href="<?=base_url()?>">home</a></span>
                            <span class="dvdr">//</span>
                            <span>contact</span>
                         </div>
@@ -92,54 +92,52 @@
                      </div>
                   </div>
                   <div class="col-xl-5">
-                     <div class="it-contact__form-box">
-                        <form action="#">
-                           <div class="row">
-                              <div class="col-12 mb-25">
-                                 <div class="it-contact-input-box">
-                                    <label>Name*</label>
-                                    <input type="text" placeholder="Name">
-                                 </div>
-                              </div>
-                              <div class="col-12 mb-25">
-                                 <div class="it-contact-input-box">
-                                    <label>Email Address*</label>
-                                    <input type="email" placeholder="Email">
-                                 </div>
-                              </div>
-                              <div class="col-12 mb-25">
-                                 <div class="it-contact-input-box">
-                                    <label>Phone*</label>
-                                    <input type="text" placeholder="Phone">
-                                 </div>
-                              </div>
-                              <div class="col-12 mb-25">
-                                 <div class="it-contact-input-box">
-                                    <label>Subject*</label>
-                                    <input type="text" placeholder="Subject">
-                                 </div>
-                              </div>
-                              <div class="col-12 mb-25">
-                                 <div class="it-contact-textarea-box">
-                                    <label>Message</label>
-                                    <textarea placeholder="Message"></textarea>
-                                 </div>
-                              </div>
-                           </div>
-                        </form>
-                        <button type="submit" class="it-btn">
-                           <span>
-                           Send Message
-                              <svg width="17" height="14" viewBox="0 0 17 14" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path d="M11 1.24023L16 7.24023L11 13.2402" stroke="currentcolor" stroke-width="1.5"
-                                 stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                              <path d="M1 7.24023H16" stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10"
-                                 stroke-linecap="round" stroke-linejoin="round" />
-                             </svg>
-                        </span>
-                     </button>
-                     </div>
+                  <div class="it-contact__form-box">
+    <form method="POST" action="<?= base_url('contact_us/contact_us_submit_data'); ?>" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-12 mb-25">
+                <div class="it-contact-input-box">
+                    <label>Name*</label>
+                    <input type="text" name="username" placeholder="Name" required>
+                </div>
+            </div>
+            <div class="col-12 mb-25">
+                <div class="it-contact-input-box">
+                    <label>Email Address*</label>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="col-12 mb-25">
+                <div class="it-contact-input-box">
+                    <label>Phone*</label>
+                    <input type="text" name="mobile_no" placeholder="Phone" required>
+                </div>
+            </div>
+            <div class="col-12 mb-25">
+                <div class="it-contact-input-box">
+                    <label>Location</label>
+                    <input type="text" name="location" placeholder="Location">
+                </div>
+            </div>
+            <div class="col-12 mb-25">
+                <div class="it-contact-input-box">
+                    <label>Subject*</label>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+            </div>
+            <div class="col-12 mb-25">
+                <div class="it-contact-textarea-box">
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Message"></textarea>
+                </div>
+            </div>
+            <div class="col-12">
+                <input type="submit" name="submit" class="it-btn" value="Send Message">
+            </div>
+        </div>
+    </form>
+</div>
+
                   </div>
                </div>
             </div>

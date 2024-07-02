@@ -11,7 +11,7 @@
                         </div>
                         <div class="it-breadcrumb-list-wrap">
                             <div class="it-breadcrumb-list">
-                                <span><a href="index.html">home</a></span>
+                                <span><a href="<?=base_url()?>">home</a></span>
                                 <span class="dvdr">//</span>
                                 <span>one-to-one-session</span>
                             </div>
@@ -27,24 +27,26 @@
     <div class="it-course-area p-relative grey-bg pt-120 pb-120">
         <div class="container">
             <div class="row">
+            <?php  foreach($one_to_one_session_view as $row){?>
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                     <div class="session-box">
-                        <img src="https://www.yamarkets.com/images/fr1.jpeg" class="card-img-top img-fluid object-fit-contain" alt="">
+                        <img src="<?=base_url('uploads/one_to_one_session/').$row->session_image;?>" class="card-img-top img-fluid object-fit-contain" alt="">
                         <div class="mt-4 p-3 pt-0">
-                            <h3 class="session-box-title mb-3">Fundamental of Forex</h3>
+                            <h3 class="session-box-title mb-3"><?php $row->session_name;?></h3>
+
                             <div>
                                 <ul class="p-0 m-0 list-none">
                                     <li class="course-info course-information ">
-                                        <span><i class="fa-solid fa-calendar-days"></i> 21-05-2024</span>
-                                        <span><i class="fa-solid fa-clock"></i> 03:00 PM</span>
+                                        <span><i class="fa-solid fa-calendar-days"></i> <?= date('d-m-Y', strtotime($row->date))?></span>
+                                        <span><i class="fa-solid fa-clock"></i> <?= $row->time;?></span>
                                     </li>
                                     <li class="course-info course-information">
-                                        <span><i class="fa-solid fa-location-dot"></i> Dubai</span>
-                                        <span><i class="fa-solid fa-globe"></i> English</span>
+                                        <span><i class="fa-solid fa-location-dot"></i> <?= $row->location;?></span>
+                                        <span><i class="fa-solid fa-globe"></i> <?= $row->language;?></span>
                                     </li>
                                     <li class="course-info course-information border-0">
-                                        <span><i class="fa-solid fa-clock-rotate-left"></i> 45 Minutes</span>
-                                        <span><i class="fa-solid fa-microphone"></i> Priti Shah</span>
+                                        <span><i class="fa-solid fa-clock-rotate-left"></i> <?= $row->duration;?> Minutes</span>
+                                        <span><i class="fa-solid fa-microphone"></i> <?= $row->speaker;?></span>
                                     </li>
 
                                 </ul>
@@ -54,63 +56,10 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                    <div class="session-box">
-                        <img src="https://www.yamarkets.com/images/fr1.jpeg" class="card-img-top img-fluid object-fit-contain" alt="">
-                        <div class="mt-4 p-3 pt-0">
-                            <h3 class="session-box-title mb-3">Fundamental of Forex</h3>
-                            <div>
-                                <ul class="p-0 m-0 list-none">
-                                    <li class="course-info course-information ">
-                                        <span><i class="fa-solid fa-calendar-days"></i> 21-05-2024</span>
-                                        <span><i class="fa-solid fa-clock"></i> 03:00 PM</span>
-                                    </li>
-                                    <li class="course-info course-information">
-                                        <span><i class="fa-solid fa-location-dot"></i> Dubai</span>
-                                        <span><i class="fa-solid fa-globe"></i> English</span>
-                                    </li>
-                                    <li class="course-info course-information border-0">
-                                        <span><i class="fa-solid fa-clock-rotate-left"></i> 45 Minutes</span>
-                                        <span><i class="fa-solid fa-microphone"></i> Priti Shah</span>
-                                    </li>
+                <?php } ?>
 
-                                </ul>
-                            </div>
-                            <div class="mt-3">
-                                <a class="it-btn" role="button" data-bs-toggle="modal" data-bs-target="#InquiryModal">Book Now </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                    <div class="session-box">
-                        <img src="https://www.yamarkets.com/images/fr1.jpeg" class="card-img-top img-fluid object-fit-contain" alt="">
-                        <div class="mt-4 p-3 pt-0">
-                            <h3 class="session-box-title mb-3">Fundamental of Forex</h3>
-                            <div>
-                                <ul class="p-0 m-0 list-none">
-                                    <li class="course-info course-information ">
-                                        <span><i class="fa-solid fa-calendar-days"></i> 21-05-2024</span>
-                                        <span><i class="fa-solid fa-clock"></i> 03:00 PM</span>
-                                    </li>
-                                    <li class="course-info course-information">
-                                        <span><i class="fa-solid fa-location-dot"></i> Dubai</span>
-                                        <span><i class="fa-solid fa-globe"></i> English</span>
-                                    </li>
-                                    <li class="course-info course-information border-0">
-                                        <span><i class="fa-solid fa-clock-rotate-left"></i> 45 Minutes</span>
-                                        <span><i class="fa-solid fa-microphone"></i> Priti Shah</span>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="mt-3">
-                                <a class="it-btn" role="button" data-bs-toggle="modal" data-bs-target="#InquiryModal">Book Now </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>

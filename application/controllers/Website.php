@@ -19,11 +19,8 @@ class Website extends CI_Controller
         $this->load->model('admin/teacher_model', 'teacher_model');
         $this->load->model('admin/analysis_detail_model', 'analysis_detail_model');
         $this->load->model('admin/trade_idea_model', 'trade_idea_model');
+        $this->load->model('admin/one_to_one_session_model', 'one_to_one_session_model');
         $this->load->helper('url');
-    }
-    public function abc()
-    {
-        $this->load->view('frontend/abc');;
     }
     public function index()
     {
@@ -49,9 +46,10 @@ class Website extends CI_Controller
     }
     public function one_to_one_session()
     {
+        $data['one_to_one_session_view'] = $this->one_to_one_session_model->one_to_one_session_view();
         $data['gallery_view'] = $this->gallery_model->gallery();
         $this->load->view('frontend/include/header');
-        $this->load->view('frontend/one-to-one-session');
+        $this->load->view('frontend/one-to-one-session',$data);
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }

@@ -78,6 +78,9 @@ $role = $this->session->userdata('role_name');
                     <a href="<?= base_url('admin/trade_idea/trade_idea_view'); ?>" class="nav-item nav-link" style="font-size:11px">
                         <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>TRADE IDEA
                     </a>
+                    <a href="<?= base_url('admin/one_to_one_session/one_to_one_session_view'); ?>" class="nav-item nav-link" style="font-size:11px">
+                        <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>ONE TO ONE SESSION
+                    </a>
                     <a href="<?= base_url('admin/contact_us/contact_us_view'); ?>" class="nav-item nav-link" style="font-size:11px">
                         <i class="fa fa-envelope me-2" style="font-size: 18px; "></i>CONTACT US
                     </a>

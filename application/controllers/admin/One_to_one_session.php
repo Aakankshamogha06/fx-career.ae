@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class trade_idea extends MY_Controller
+class one_to_one_session extends MY_Controller
 {
 
 	function __construct()
@@ -15,7 +15,7 @@ class trade_idea extends MY_Controller
 		$this->load->helper('cookie');
 		$this->load->library('form_validation');
 		$this->load->library('encryption');
-		$this->load->model('admin/trade_idea_model', 'trade_idea_model');
+		$this->load->model('admin/one_to_one_session_model', 'one_to_one_session_model');
 		$this->load->helper('security');
 
 		date_default_timezone_set('Asia/Kolkata');
@@ -26,12 +26,12 @@ class trade_idea extends MY_Controller
 
 
 
-	public function add_trade_idea()
+	public function add_one_to_one_session()
 	{
 		if ($this->session->has_userdata('is_admin_login')) {
 
 
-			$data['view'] = 'admin/trade_idea/add_trade_idea';
+			$data['view'] = 'admin/one_to_one_session/add_one_to_one_session';
 
 			$this->load->view('admin/layout', $data);
 		} else {
@@ -39,7 +39,7 @@ class trade_idea extends MY_Controller
 		}
 	}
 
-	public function trade_idea_submit_data()
+	public function one_to_one_session_submit_data()
 	{
 		if ($this->session->has_userdata('is_admin_login')) {
 
@@ -62,9 +62,9 @@ class trade_idea extends MY_Controller
 					$error = array('error' => $this->upload->display_errors());
 					print_r($error);
 				}
-				if ($this->trade_idea_model->trade_idea_data_submit($data,$session_image) == true) {
+				if ($this->one_to_one_session_model->one_to_one_session_data_submit($data,$session_image) == true) {
 
-					redirect("admin/trade_idea/trade_idea_view");
+					redirect("admin/one_to_one_session/one_to_one_session_view");
 				} ?> <?php
 					} else {
 						$data['message'] = '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> Sorry Please Try Again.</div>';
@@ -76,12 +76,12 @@ class trade_idea extends MY_Controller
 
 
 			
-			public function trade_idea_view()
+			public function one_to_one_session_view()
 			{
 				if ($this->session->has_userdata('is_admin_login')) {
 
-					$data['trade_idea_view'] = $this->trade_idea_model->trade_idea_view();
-					$data['view'] = 'admin/trade_idea/view_trade_idea';
+					$data['one_to_one_session_view'] = $this->one_to_one_session_model->one_to_one_session_view();
+					$data['view'] = 'admin/one_to_one_session/view_one_to_one_session';
 					$this->load->view('admin/layout', $data);
 				} else {
 					redirect('admin/auth/login');
@@ -89,45 +89,45 @@ class trade_idea extends MY_Controller
 			}
 
 
-			public function trade_idea_edit($id)
+			public function one_to_one_session_edit($id)
 			{
 				if ($this->session->has_userdata('is_admin_login')) {
 
 					$id = $this->uri->segment(4);
 
-					$data['view_trade_idea'] = $this->trade_idea_model->trade_idea_edit($id);
-					$data['view'] = 'admin/trade_idea/edit_trade_idea';
+					$data['view_one_to_one_session'] = $this->one_to_one_session_model->one_to_one_session_edit($id);
+					$data['view'] = 'admin/one_to_one_session/edit_one_to_one_session';
 					$this->load->view('admin/layout', $data);
 				} else {
 					redirect('admin/auth/login');
 				}
 			}
 
-			public function trade_idea_update_data()
+			public function one_to_one_session_update_data()
 			{
 				if ($this->session->has_userdata('is_admin_login')) {
 
 					$data = [];
 					if ($this->input->post()) {
 						$data = $this->input->post();
-						$config['upload_path'] = 'uploads/trade_idea';
+						$config['upload_path'] = 'uploads/one_to_one_session';
 						$config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
 						$config['encrypt_name'] = TRUE;
 						$this->load->library('upload',$config);
 						$this->upload->initialize($config);
-						if($this->upload->do_upload('trade_image'))
+						if($this->upload->do_upload('session_image'))
 						{
 							$uploadData = $this->upload->data();
-							$trade_image = $uploadData['file_name'];
+							$session_image = $uploadData['file_name'];
 						}
 						else
 						{
 							$error = array('error' => $this->upload->display_errors());
 							print_r($error);
 						}
-						if ($this->trade_idea_model->trade_idea_update_data($data,$trade_image) == true) {
+						if ($this->one_to_one_session_model->one_to_one_session_update_data($data,$session_image) == true) {
 
-							redirect("trade_idea/view_trade_idea");
+							redirect("one_to_one_session/view_one_to_one_session");
 						} ?><?php
 						} else {
 							$data['message'] = '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> Sorry Please Try Again.</div>';
@@ -136,24 +136,24 @@ class trade_idea extends MY_Controller
 						redirect('admin/auth/login');
 					}
 				}
-				public function trade_idea_delete($id)
+				public function one_to_one_session_delete($id)
 				{
 					if ($this->session->has_userdata('is_admin_login')) {
 
 						$id = $this->uri->segment(4);
 
-						if ($this->trade_idea_model->trade_idea_delete($id) == true) {
+						if ($this->one_to_one_session_model->one_to_one_session_delete($id) == true) {
 
-							redirect("trade_idea/view_trade_idea");
+							redirect("one_to_one_session/view_one_to_one_session");
 			}
 			} else {
 				redirect('admin/auth/login');
 		}
 	}
 	public function index() {
-        $this->load->model('trade_idea_model');
+        $this->load->model('one_to_one_session_model');
         $category = 'blog_category';
-        $data['trade_idea'] = $this->trade_idea_model->get_recent_trade_idea($category);
+        $data['one_to_one_session'] = $this->one_to_one_session_model->get_recent_one_to_one_session($category);
         $this->load->view('blog_view', $data);
     }
 }

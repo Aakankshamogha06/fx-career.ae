@@ -7,13 +7,13 @@
                <div class="col-md-12">
                   <div class="it-breadcrumb-content z-index-3 text-center">
                      <div class="it-breadcrumb-title-box">
-                        <h3 class="it-breadcrumb-title">TEACHER Details</h3>
+                        <h3 class="it-breadcrumb-title">Mentor Details</h3>
                      </div>
                      <div class="it-breadcrumb-list-wrap">
                         <div class="it-breadcrumb-list">
                            <span><a href="<?=base_url()?>">home</a></span>
                            <span class="dvdr">//</span>
-                           <span>Teacher Details</span>
+                           <span>Mentor Details</span>
                         </div>
                      </div>
                   </div>

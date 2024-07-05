@@ -8,8 +8,13 @@
 		public function insert_user($data)
 		{
 			return $this->db->insert('users', $data);
+			
 		}
-
+		public function insert_users($data) {
+			// Insert user data into 'users' table
+			$this->db->insert('users', $data);
+			return $this->db->insert_id(); // Return the insert ID
+		}
 		public function get_all_users(){
 			$query = $this->db->query("SELECT *,(SELECT role_name FROM `role` where id=is_admin) as role_name  FROM `users`;");
 			return $result = $query->result_array();
@@ -81,6 +86,19 @@
 		return $this->db->get()->row();
 		
 	}
+	public function user($id)
+    {
+
+        $assign_data = $this->db->query("SELECT * FROM `users` where users.id=$id ");
+
+        $fetch = $assign_data->num_rows();
+        if ($fetch > 0) {
+            return $fetch = $assign_data->result_array();
+        } else {
+            return false;
+        }
+    }
+	
 	}
 
 ?>

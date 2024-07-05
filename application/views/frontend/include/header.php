@@ -226,7 +226,7 @@
                                  </a>
                               </div> -->
                               <div class="it-header-2-button d-none d-md-block">
-                                 <a class="it-btn" href="<?=base_url()?>login">
+                                 <a class="it-btn" href="<?=base_url()?>admin/auth/login">
                                     <span>
                                        Login/Register
                                        <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">

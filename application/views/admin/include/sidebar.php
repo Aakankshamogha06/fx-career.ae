@@ -11,8 +11,8 @@ $role = $this->session->userdata('role_name');
         <nav class="navbar bg-secondary navbar-dark">
             <!-- <a href="<?= base_url() ?>admin/dashboard" class="navbar-brand mx-4 mb-3">
                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>FXCAREERS</h3>
-            </a> --><br><br><br><br>
-            <div class="d-flex align-items-center ms-4 mb-4">
+            </a> -->
+            <div class="d-flex align-items-center ms-4 mb-4" style="margin-top: 80px;">
                 <div class="position-relative">
                     <img class="rounded-circle" src="<?= base_url() ?>public/admin/img/profile.png" alt="" style="width: 40px; height: 40px;">
                     <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
@@ -75,8 +75,11 @@ $role = $this->session->userdata('role_name');
                     <a href="<?= base_url('admin/slider/slider_view'); ?>" class="nav-item nav-link" style="font-size:11px">
                         <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>SLIDER
                     </a>
+                    <a href="<?= base_url('admin/teacher/teacher_view'); ?>" class="nav-item nav-link" style="font-size:11px">
+                        <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>MENTOR
+                    </a>
                     <a href="<?= base_url('admin/trade_idea/trade_idea_view'); ?>" class="nav-item nav-link" style="font-size:11px">
-                        <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>TRADE IDEA
+                        <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>TRADE IDEAS
                     </a>
                     <a href="<?= base_url('admin/one_to_one_session/one_to_one_session_view'); ?>" class="nav-item nav-link" style="font-size:11px">
                         <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>ONE TO ONE SESSION
@@ -84,6 +87,12 @@ $role = $this->session->userdata('role_name');
                     <a href="<?= base_url('admin/contact_us/contact_us_view'); ?>" class="nav-item nav-link" style="font-size:11px">
                         <i class="fa fa-envelope me-2" style="font-size: 18px; "></i>CONTACT US
                     </a>
+                <?php endif; ?>
+                <?php if ($this->session->userdata('role') === '2') : ?>
+                    <a href="<?= base_url('admin/dashboard'); ?>" class="nav-item nav-link" style="font-size:11px">
+                        <i class="fa fa-tachometer-alt me-2" style="font-size: 18px; "></i>DASHBOARD
+                    </a>
+
                 <?php endif; ?>
                 <?php if ($this->session->userdata('role') === '3') : ?>
                     <a href="<?= base_url('admin/dashboard'); ?>" class="nav-item nav-link" style="font-size:11px">

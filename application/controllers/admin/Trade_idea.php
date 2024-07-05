@@ -47,22 +47,22 @@ class trade_idea extends MY_Controller
 			$data = [];
 			if ($this->input->post()) {
 				$data = $this->input->post();
-				$config['upload_path'] = 'uploads/one_to_one_session';
+				$config['upload_path'] = 'uploads/trade_idea';
 				$config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
 				$config['encrypt_name'] = TRUE;
 				$this->load->library('upload',$config);
 				$this->upload->initialize($config);
-				if($this->upload->do_upload('session_image'))
+				if($this->upload->do_upload('trade_image'))
 				{
 					$uploadData = $this->upload->data();
-					$session_image = $uploadData['file_name'];
+					$trade_image = $uploadData['file_name'];
 				}
 				else
 				{
 					$error = array('error' => $this->upload->display_errors());
 					print_r($error);
 				}
-				if ($this->trade_idea_model->trade_idea_data_submit($data,$session_image) == true) {
+				if ($this->trade_idea_model->trade_idea_data_submit($data,$trade_image) == true) {
 
 					redirect("admin/trade_idea/trade_idea_view");
 				} ?> <?php

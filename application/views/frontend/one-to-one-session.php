@@ -30,7 +30,7 @@
             <?php  foreach($one_to_one_session_view as $row){?>
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                     <div class="session-box">
-                        <img src="<?=base_url('uploads/one_to_one_session/').$row->session_image;?>" class="card-img-top img-fluid object-fit-contain" alt="">
+                        <img src="<?=base_url('uploads/one_to_one_session/').$row->session_image;?>" class="card-img-top img-fluid object-fit-contain" style="width: 100%; border-radius: 10px; transition: 0.9s; height: 200px; object-fit: cover;     vertical-align: middle;" alt="">
                         <div class="mt-4 p-3 pt-0">
                             <h3 class="session-box-title mb-3"><?php $row->session_name;?></h3>
 

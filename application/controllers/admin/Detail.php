@@ -50,19 +50,16 @@ class detail extends MY_Controller
 				$config['upload_path'] = 'uploads/course';
 				$config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
 				$config['encrypt_name'] = TRUE;
-				$this->load->library('upload',$config);
+				$this->load->library('upload', $config);
 				$this->upload->initialize($config);
-				if($this->upload->do_upload('course_image'))
-				{
+				if ($this->upload->do_upload('course_image')) {
 					$uploadData = $this->upload->data();
 					$course_image = $uploadData['file_name'];
-				}
-				else
-				{
+				} else {
 					$error = array('error' => $this->upload->display_errors());
 					print_r($error);
 				}
-				if ($this->detail_model->detail_data_submit($data,$course_image) == true) {
+				if ($this->detail_model->detail_data_submit($data, $course_image) == true) {
 
 					redirect("admin/detail/detail_view");
 				} ?> <?php
@@ -75,7 +72,7 @@ class detail extends MY_Controller
 			}
 
 
-			
+
 			public function detail_view()
 			{
 				if ($this->session->has_userdata('is_admin_login')) {
@@ -107,54 +104,54 @@ class detail extends MY_Controller
 			{
 				if ($this->session->has_userdata('is_admin_login')) {
 
-					$data = [];
-			if ($this->input->post()) {
-				$data = $this->input->post();
-				$config['upload_path'] = 'uploads/course';
-				$config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
-				$config['encrypt_name'] = TRUE;
-				$this->load->library('upload',$config);
-				$this->upload->initialize($config);
-				if($this->upload->do_upload('course_image'))
-				{
-					$uploadData = $this->upload->data();
-					$course_image = $uploadData['file_name'];
-				}
-				else
-				{
-					$error = array('error' => $this->upload->display_errors());
-					print_r($error);
-				}
-				if ($this->detail_model->detail_update_data($data,$course_image) == true) {
+					$data = $this->input->post();
+					$course_image = $data['existing_course_image']; // default to existing image
 
-					redirect("admin/detail/detail_view");
-				} ?> <?php
+					if (!empty($_FILES['course_image']['name'])) {
+						$config['upload_path'] = 'uploads/course';
+						$config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
+						$config['encrypt_name'] = TRUE;
+						$this->load->library('upload', $config);
+						$this->upload->initialize($config);
+						if ($this->upload->do_upload('course_image')) {
+							$uploadData = $this->upload->data();
+							$course_image = $uploadData['file_name'];
+						} else {
+							$error = array('error' => $this->upload->display_errors());
+							print_r($error);
+						}
+					}
+
+					if ($this->detail_model->detail_update_data($data, $course_image)) {
+						redirect("admin/detail/detail_view");
 					} else {
 						$data['message'] = '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> Sorry Please Try Again.</div>';
 					}
 				} else {
 					redirect('admin/auth/login');
 				}
-				}
-				public function detail_delete($id)
-				{
-					if ($this->session->has_userdata('is_admin_login')) {
-
-						$id = $this->uri->segment(4);
-
-						if ($this->detail_model->detail_delete($id) == true) {
-
-							redirect("detail/view_detail");
 			}
-			} else {
-				redirect('admin/auth/login');
+
+			public function detail_delete($id)
+			{
+				if ($this->session->has_userdata('is_admin_login')) {
+
+					$id = $this->uri->segment(4);
+
+					if ($this->detail_model->detail_delete($id) == true) {
+
+						redirect("detail/view_detail");
+					}
+				} else {
+					redirect('admin/auth/login');
+				}
+			}
+			public function index()
+			{
+				$this->load->model('detail_model');
+				$category = 'blog_category';
+				$data['blogs'] = $this->detail_model->get_recent_blogs($category);
+				$this->load->view('blog_view', $data);
+			}
 		}
-	}
-	public function index() {
-        $this->load->model('detail_model');
-        $category = 'blog_category';
-        $data['blogs'] = $this->detail_model->get_recent_blogs($category);
-        $this->load->view('blog_view', $data);
-    }
-}
-?>
+						?>

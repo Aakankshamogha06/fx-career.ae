@@ -99,13 +99,13 @@
 <script src="<?=base_url()?>public/web/assets/css/fancybox/fancybox.min.js"></script>
 <script src="<?=base_url()?>public/web/assets/js/purecounter.js"></script>
 <script src="<?=base_url()?>public/web/assets/js/wow.js"></script>
-<script src="<?=base_url()?>public/web/assets/js/nice-select.js"></script>
+<!-- <script src="<?=base_url()?>public/web/assets/js/nice-select.js"></script> -->
 <script src="<?=base_url()?>public/web/assets/js/swiper-bundle.js"></script>
 <script src="<?=base_url()?>public/web/assets/js/isotope-pkgd.js"></script>
 <script src="<?=base_url()?>public/web/assets/js/imagesloaded-pkgd.js"></script>
 <script src="<?=base_url()?>public/web/assets/js/ajax-form.js"></script>
 <script src="<?=base_url()?>public/web/assets/js/main.js"></script>
-
+<script src="<?=base_url()?>public/web/assets/js/form.js"></script>
 
 
 </body>

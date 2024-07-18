@@ -8823,6 +8823,9 @@ Gallery
   width: 100%;
   border-radius: 10px;
   transition: 0.9s;
+  height: 200px;
+  object-fit: cover;
+  
 }
 .it-blog-meta span {
   color: #4D5756;

@@ -26,7 +26,7 @@ class Course_api extends REST_Controller
             $decodedToken = $this->authorization_token->validateToken(trim($headers['Authorization']));
             if ($decodedToken['status']) {
         $id = $this->uri->segment(4);
-        $data = $this->detail_model->detail_view($id);
+        $data = $this->detail_model->details($id);
         $this->response($data, REST_Controller::HTTP_OK);
     } else {
         $this->response($decodedToken, REST_Controller::HTTP_UNAUTHORIZED);

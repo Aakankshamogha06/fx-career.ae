@@ -34,14 +34,7 @@ class trade_idea_model extends CI_Model
         return 0;
     }
 }
-public function trade_idea(){
-	$result = $this->db->query("SELECT * FROM `trade_idea` ORDER BY blog_date DESC LIMIT 3");
-	if ($result->num_rows() > 0) {
-        return $result->result();
-    } else {
-        return 0;
-    }
-}
+
 
 public function trade_idea_data_nm()
 {
@@ -136,7 +129,7 @@ public function trade_idea_data_nm()
 		return $query->result();
 	}	
 
-	public function blog($id)
+	public function trade_idea($id)
     {
 
         $assign_data = $this->db->query("SELECT * FROM `trade_idea` where trade_idea.id=$id ");

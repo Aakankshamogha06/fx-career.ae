@@ -224,6 +224,29 @@ $route['trade_idea/edit_trade_idea/(:any)'] = 'admin/trade_idea/trade_idea_edit/
 $route['trade_idea/trade_idea_update_data'] = 'admin/trade_idea/trade_idea_update_data';
 $route['trade_idea/trade_idea_delete/(:any)'] = 'admin/trade_idea/trade_idea_delete/$1';
 
+// preffered_time ****************
+$route['preffered_time/add_preffered_time'] = 'admin/preffered_time/add_preffered_time';
+$route['preffered_time/preffered_time_submit_data'] = 'admin/preffered_time/preffered_time_submit_data';
+$route['preffered_time/view_preffered_time']        = 'admin/preffered_time/preffered_time_view';
+$route['preffered_time/edit_preffered_time/(:any)'] = 'admin/preffered_time/preffered_time_edit/$1';
+$route['preffered_time/preffered_time_update_data'] = 'admin/preffered_time/preffered_time_update_data';
+$route['preffered_time/preffered_time_delete/(:any)'] = 'admin/preffered_time/preffered_time_delete/$1';
+
+// preffered_topic ****************
+$route['preffered_topic/add_preffered_topic'] = 'admin/preffered_topic/add_preffered_topic';
+$route['preffered_topic/preffered_topic_submit_data'] = 'admin/preffered_topic/preffered_topic_submit_data';
+$route['preffered_topic/view_preffered_topic']        = 'admin/preffered_topic/preffered_topic_view';
+$route['preffered_topic/edit_preffered_topic/(:any)'] = 'admin/preffered_topic/preffered_topic_edit/$1';
+$route['preffered_topic/preffered_topic_update_data'] = 'admin/preffered_topic/preffered_topic_update_data';
+$route['preffered_topic/preffered_topic_delete/(:any)'] = 'admin/preffered_topic/preffered_topic_delete/$1';
+
+// questions ****************
+$route['questions/add_questions'] = 'admin/questions/add_questions';
+$route['questions/questions_submit_data'] = 'admin/questions/questions_submit_data';
+$route['questions/view_questions']        = 'admin/questions/questions_view';
+$route['questions/edit_questions/(:any)'] = 'admin/questions/questions_edit/$1';
+$route['questions/questions_update_data'] = 'admin/questions/questions_update_data';
+$route['questions/questions_delete/(:any)'] = 'admin/questions/questions_delete/$1';
 
 
 
@@ -255,14 +278,15 @@ $route['mentor'] = 'website/mentor';
 $route['mentor/(:any)'] = 'website/mentor_details/$1';
 $route['trade-idea/(:any)'] = 'website/trade_idea_detail/$1';
 $route['trade-idea-detail'] = 'website/trade_idea_detail';
-
-
+$route['book'] = 'website/form';
+$route['results'] = 'website/results';
 
 
 /* API */
 $route['api/register'] = 'api/User/register';
 $route['api/login'] = 'api/User/login';
 $route['api/logout'] = 'api/User/logout';
+$route['api/update_profile'] = 'api/User/update_profile';
 $route['reGenToken'] = 'api/Token/reGenToken';
 $route['course_api/course'] = 'course_api/course_get';
 $route['course_api/course_by_id/(:/num)'] = 'course_api/course_by_id_get/$1';
@@ -272,3 +296,10 @@ $route['course_api/curriculum/(:/num)/(:/num)'] = 'course_api/curriculum_get/$1/
 $route['course_api/topic/(:/num)'] = 'course_api/topic_get/$1';
 $route['blog_api/blog'] = 'blog_api/blog_get';
 $route['blog_api/blog_by_id/(:/num)'] = 'blog_api/blog_by_id_get/$1';
+$route['user_api/user'] = 'user_api/user_get';
+$route['user_api/slider'] = 'user_api/slider_get';
+$route['user_api/user_by_id/(:/num)'] = 'user_api/user_by_id_get/$1';
+$route['trade_idea_api/trade_idea'] = 'trade_idea_api/trade_idea_get';
+$route['trade_idea_api/trade_idea_by_id/(:/num)'] = 'trade_idea_api/trade_idea_by_id_get/$1';
+$route['one_to_one_session_api/one_to_one_session'] = 'one_to_one_session_api/one_to_one_session_get';
+$route['one_to_one_session_api/one_to_one_session_by_id/(:/num)'] = 'one_to_one_session_api/one_to_one_session_by_id_get/$1';

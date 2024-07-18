@@ -78,6 +78,12 @@ $role = $this->session->userdata('role_name');
                     <a href="<?= base_url('admin/teacher/teacher_view'); ?>" class="nav-item nav-link" style="font-size:11px">
                         <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>MENTOR
                     </a>
+                    <a href="<?= base_url('admin/preffered_time/preffered_time_view'); ?>" class="nav-item nav-link" style="font-size:11px">
+                        <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>PREFFERED TIME
+                    </a>
+                    <a href="<?= base_url('admin/preffered_topic/preffered_topic_view'); ?>" class="nav-item nav-link" style="font-size:11px">
+                        <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>PREFFERED TOPIC
+                    </a>
                     <a href="<?= base_url('admin/trade_idea/trade_idea_view'); ?>" class="nav-item nav-link" style="font-size:11px">
                         <i class="fa fa-sliders-h me-2" style="font-size: 18px; "></i>TRADE IDEAS
                     </a>

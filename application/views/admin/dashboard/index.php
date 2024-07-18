@@ -14,8 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -29,6 +29,16 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .tradingview-widget-copyright {
+            display: none;
+            background-color: #000;
+        }
+
+        .mm {
+            margin-right: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,53 +52,9 @@
         <!-- Spinner End -->
 
 
-        <!-- Sidebar Start -->
-        <!-- <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="<?=base_url()?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
-                        </div>
-                    </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a>
-                            <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div> -->
-        <!-- Sidebar End -->
-
 
         <!-- Content Start -->
-        <div class="content">
+        <!-- <div class="content">
             
             
             <div class="container-fluid pt-4 px-4">
@@ -235,7 +201,7 @@
                                 <a href="">Show All</a>
                             </div>
                             <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="<?=base_url()?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle flex-shrink-0" src="<?= base_url() ?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                 <div class="w-100 ms-3">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h6 class="mb-0">Jhon Doe</h6>
@@ -245,7 +211,7 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="<?=base_url()?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle flex-shrink-0" src="<?= base_url() ?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                 <div class="w-100 ms-3">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h6 class="mb-0">Jhon Doe</h6>
@@ -255,7 +221,7 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="<?=base_url()?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle flex-shrink-0" src="<?= base_url() ?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                 <div class="w-100 ms-3">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h6 class="mb-0">Jhon Doe</h6>
@@ -265,7 +231,7 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="<?=base_url()?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                <img class="rounded-circle flex-shrink-0" src="<?= base_url() ?>public/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                 <div class="w-100 ms-3">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h6 class="mb-0">Jhon Doe</h6>
@@ -358,9 +324,303 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Content End -->
+        <div class="content">
 
+
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                            {
+                                "symbols": [{
+                                        "proName": "FOREXCOM:SPXUSD",
+                                        "title": "S&P 500"
+                                    },
+                                    {
+                                        "proName": "FOREXCOM:NSXUSD",
+                                        "title": "US 100"
+                                    },
+                                    {
+                                        "proName": "FX_IDC:EURUSD",
+                                        "title": "EUR to USD"
+                                    },
+                                    {
+                                        "proName": "BITSTAMP:BTCUSD",
+                                        "title": "Bitcoin"
+                                    },
+                                    {
+                                        "proName": "BITSTAMP:ETHUSD",
+                                        "title": "Ethereum"
+                                    }
+                                ],
+                                "showSymbolLogo": true,
+                                "colorTheme": "dark",
+                                "isTransparent": false,
+                                "displayMode": "adaptive",
+                                "locale": "in"
+                            }
+                        </script>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on
+                                        TradingView</span></a></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "dark",
+                                    "dateRange": "12M",
+                                    "showChart": true,
+                                    "locale": "in",
+                                    "largeChartUrl": "",
+                                    "isTransparent": false,
+                                    "showSymbolLogo": true,
+                                    "showFloatingTooltip": false,
+                                    "width": "100%",
+                                    "height": "900",
+                                    "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+                                    "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                                    "gridLineColor": "rgba(240, 243, 250, 0)",
+                                    "scaleFontColor": "rgba(106, 109, 120, 1)",
+                                    "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                                    "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                                    "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                                    "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                                    "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+                                    "tabs": [{
+                                            "title": "Indices",
+                                            "symbols": [{
+                                                    "s": "FOREXCOM:SPXUSD",
+                                                    "d": "S&P 500"
+                                                },
+                                                {
+                                                    "s": "FOREXCOM:NSXUSD",
+                                                    "d": "US 100"
+                                                },
+                                                {
+                                                    "s": "FOREXCOM:DJI",
+                                                    "d": "Dow 30"
+                                                },
+                                                {
+                                                    "s": "INDEX:NKY",
+                                                    "d": "Nikkei 225"
+                                                },
+                                                {
+                                                    "s": "BSE:SENSEX"
+                                                }
+                                            ],
+                                            "originalTitle": "Indices"
+                                        },
+                                        {
+                                            "title": "Futures",
+                                            "symbols": [{
+                                                    "s": "CME_MINI:ES1!",
+                                                    "d": "S&P 500"
+                                                },
+                                                {
+                                                    "s": "CME:6E1!",
+                                                    "d": "Euro"
+                                                },
+                                                {
+                                                    "s": "COMEX:GC1!",
+                                                    "d": "Gold"
+                                                },
+                                                {
+                                                    "s": "NYMEX:CL1!",
+                                                    "d": "WTI Crude Oil"
+                                                },
+                                                {
+                                                    "s": "NYMEX:NG1!",
+                                                    "d": "Gas"
+                                                },
+                                                {
+                                                    "s": "CBOT:ZC1!",
+                                                    "d": "Corn"
+                                                }
+                                            ],
+                                            "originalTitle": "Futures"
+                                        },
+                                        {
+                                            "title": "Bonds",
+                                            "symbols": [{
+                                                    "s": "CBOT:ZB1!",
+                                                    "d": "T-Bond"
+                                                },
+                                                {
+                                                    "s": "CBOT:UB1!",
+                                                    "d": "Ultra T-Bond"
+                                                },
+                                                {
+                                                    "s": "EUREX:FGBL1!",
+                                                    "d": "Euro Bund"
+                                                },
+                                                {
+                                                    "s": "EUREX:FBTP1!",
+                                                    "d": "Euro BTP"
+                                                },
+                                                {
+                                                    "s": "EUREX:FGBM1!",
+                                                    "d": "Euro BOBL"
+                                                }
+                                            ],
+                                            "originalTitle": "Bonds"
+                                        },
+                                        {
+                                            "title": "Forex",
+                                            "symbols": [{
+                                                    "s": "FX_IDC:USDINR"
+                                                },
+                                                {
+                                                    "s": "FX_IDC:GBPINR"
+                                                },
+                                                {
+                                                    "s": "FX_IDC:JPYINR"
+                                                },
+                                                {
+                                                    "s": "FX_IDC:EURINR"
+                                                },
+                                                {
+                                                    "s": "FX:EURUSD"
+                                                },
+                                                {
+                                                    "s": "FX:GBPUSD"
+                                                }
+                                            ],
+                                            "originalTitle": "Forex"
+                                        }
+                                    ]
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="col-lg-6 tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on
+                                        TradingView</span></a></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                                {
+                                    "interval": "1m",
+                                    "width": 425,
+                                    "isTransparent": false,
+                                    "height": 450,
+                                    "symbol": "FX_IDC:USDINR",
+                                    "showIntervalTabs": true,
+                                    "displayMode": "single",
+                                    "locale": "in",
+                                    "colorTheme": "dark"
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="col-lg-6 tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on
+                                        TradingView</span></a></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+                                {
+                                    "width": 600,
+                                    "height": 450,
+                                    "currencies": [
+                                        "EUR",
+                                        "USD",
+                                        "JPY",
+                                        "GBP",
+                                        "CHF",
+                                        "AUD",
+                                        "NZD",
+                                        "INR"
+                                    ],
+                                    "isTransparent": false,
+                                    "colorTheme": "dark",
+                                    "locale": "in"
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+                                {
+                                    "symbols": [
+                                        [
+                                            "FX_IDC:USDINR|1D"
+                                        ],
+                                        [
+                                            "FX_IDC:GBPINR|1D"
+                                        ],
+                                        [
+                                            "FX_IDC:JPYINR|1D"
+                                        ],
+                                        [
+                                            "FX:EURUSD|1D"
+                                        ],
+                                        [
+                                            "FX:GBPUSD|1D"
+                                        ]
+                                    ],
+                                    "chartOnly": false,
+                                    "width": 1150,
+                                    "height": 600,
+                                    "locale": "in",
+                                    "colorTheme": "dark",
+                                    "autosize": false,
+                                    "showVolume": false,
+                                    "showMA": false,
+                                    "hideDateRanges": false,
+                                    "hideMarketStatus": false,
+                                    "hideSymbolLogo": false,
+                                    "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                    "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                                    "fontSize": "10",
+                                    "noTimeScale": false,
+                                    "valuesTracking": "1",
+                                    "changeMode": "price-and-percent",
+                                    "chartType": "area",
+                                    "maLineColor": "#2962FF",
+                                    "maLineWidth": 1,
+                                    "maLength": 9,
+                                    "lineWidth": 2,
+                                    "lineType": 0,
+                                    "dateRanges": [
+                                        "1d|1",
+                                        "1m|30",
+                                        "3m|60",
+                                        "12m|1D",
+                                        "60m|1W",
+                                        "all|1M"
+                                    ]
+                                }
+                            </script>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">FXCareers</a>, All Right Reserved.
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            Designed By <a href="<?= base_url() ?>">FX Careers</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

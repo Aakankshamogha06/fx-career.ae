@@ -16,9 +16,10 @@
    <!-- CSS here -->
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/animate.css">
+   <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/form.css">
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/custom-animation.css">
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/slick.css">
-   <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/nice-select.css">
+   <!-- <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/nice-select.css"> -->
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/flaticon_xoft.css">
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/swiper-bundle.css">
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/meanmenu.css">
@@ -27,18 +28,18 @@
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/fancybox/fancybox.min.css">
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/spacing.css">
    <link rel="stylesheet" href="<?=base_url()?>public/web/assets/css/main.css">
-
+   
 </head>
 
 <body>
 
    <!-- preloader -->
-   <div id="preloader">
+   <!-- <div id="preloader">
       <div class="preloader">
          <span></span>
          <span></span>
       </div>
-   </div>
+   </div> -->
    <!-- preloader end  -->
 
    <!-- back-to-top-start  -->

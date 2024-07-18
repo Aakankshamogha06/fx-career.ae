@@ -20,6 +20,8 @@ class Website extends CI_Controller
         $this->load->model('admin/analysis_detail_model', 'analysis_detail_model');
         $this->load->model('admin/trade_idea_model', 'trade_idea_model');
         $this->load->model('admin/one_to_one_session_model', 'one_to_one_session_model');
+        $this->load->model('admin/Form_model', 'Form_model');
+        $this->load->model('admin/questions_model', 'questions_model');
         $this->load->helper('url');
     }
     public function index()
@@ -33,7 +35,16 @@ class Website extends CI_Controller
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }
-
+    public function results()
+    {
+        $data['gallery_view'] = $this->gallery_model->gallery();
+        $data['teachers'] = $this->teacher_model->teacher();
+        $data['blog_detail_view'] = $this->blog_detail_model->blog_detail();
+        $this->load->view('frontend/include/header');
+        $this->load->view('frontend/results', $data);
+        $this->load->view('frontend/include/newsletter');
+        $this->load->view('frontend/include/footer', $data);
+    }
     public function about()
     {
         $data['teachers'] = $this->teacher_model->teacher_view();
@@ -318,5 +329,75 @@ class Website extends CI_Controller
         $base64_image = 'data:image/png;base64,' . base64_encode($image_data);
         return $base64_image;
     }
+
+public function form()
+{
+    $data['questions'] = $this->questions_model->questions();
+    $data['gallery_view'] = $this->gallery_model->gallery();
+    $data['teachers'] = $this->teacher_model->teacher();
+    $data['blog_detail_view'] = $this->blog_detail_model->blog_detail();
+    $data['course_details_view'] = $this->detail_model->online_course_index();
+    $this->load->view('frontend/include/header');
+    $this->load->view('frontend/form', $data);
+    $this->load->view('frontend/include/newsletter');
+    $this->load->view('frontend/include/footer', $data);
+}
+
+
+public function submit() {
+    if ($this->input->server('REQUEST_METHOD') === 'POST') {
+        $score = 0;
+
+        // Fetch questions from the database
+        $questions = $this->Form_model->get_questions();
+
+        foreach ($questions as $question) {
+            $question_id = $question->id;
+            $correct_answer = $question->correct_answer; // Adjust according to your database structure
+
+            // Retrieve user's answer from POST data
+            $user_answer = $this->input->post('question_' . $question_id);
+
+            // Compare user's answer with correct answer
+            if ($user_answer && $user_answer === $correct_answer) {
+                $score++;
+            }
+        }
+
+        // For debugging, check if $score is incremented correctly
+        echo "Score: " . $score;
+
+        // If score is correctly calculated, proceed to save form data
+        $data = array(
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email_address' => $this->input->post('email_address'),
+            'phone_number' => $this->input->post('phone_number'),
+            'address' => $this->input->post('address'),
+            'product_purchase' => $this->input->post('product_purchase'),
+            'address_state' => $this->input->post('address_state'),
+            'product_satisfaction' => $this->input->post('product_satisfaction'),
+            'referal_first_name' => $this->input->post('referal_first_name'),
+            'referal_last_name' => $this->input->post('referal_last_name'),
+            'referal_email_address' => $this->input->post('referal_email_address'),
+            'referal_phone_number' => $this->input->post('referal_phone_number'),
+            'product_feedback' => $this->input->post('product_feedback'),
+            'score' => $score
+            // Add other fields as needed
+        );
+
+        // Save data to database
+        $this->Form_model->save_form_data($data);
+
+        // Redirect to results page or home based on your logic
+        redirect('website/results');
+        return;
+    }
+
+    // If form was not submitted via POST, redirect to home
+    redirect('home');
+}
+
+
 }
 ?>

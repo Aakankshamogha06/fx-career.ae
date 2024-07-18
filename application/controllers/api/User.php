@@ -122,9 +122,11 @@ class User extends REST_Controller
 
     public function update_profile_post()
     {
-        $this->form_validation->set_rules('user_id', 'User ID', 'trim|required|numeric');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('user_id', 'User ID', 'trim|numeric');
+        $this->form_validation->set_rules('email', 'Email', 'trim|valid_email');
         $this->form_validation->set_rules('mobile_no', 'Phone Number', 'trim|numeric');
+        $this->form_validation->set_rules('firstname', 'First Name', 'trim');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'trim');
 
         if ($this->form_validation->run() === false) {
             $this->response(['Validation errors' => $this->form_validation->error_array()], REST_Controller::HTTP_BAD_REQUEST);
@@ -132,6 +134,9 @@ class User extends REST_Controller
             $user_id = $this->input->post('user_id');
             $email = $this->input->post('email');
             $mobile_no = $this->input->post('mobile_no');
+            $firstname = $this->input->post('firstname');
+            $lastname = $this->input->post('lastname');
+            
             $user = $this->User_model->get_user($user_id);
 
             if ($user) {
@@ -145,7 +150,11 @@ class User extends REST_Controller
                     $updated_data['mobile_no'] = $mobile_no;
                 }
 
-
+                if ($firstname !== $user->firstname || $lastname !== $user->lastname) {
+                    $updated_data['firstname'] = $firstname;
+                    $updated_data['lastname'] = $lastname;
+                    $updated_data['username'] = $firstname . ' ' . $lastname;
+                }
 
                 if (!empty($updated_data)) {
                     $result = $this->User_model->update_user($user_id, $updated_data);

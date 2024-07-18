@@ -29,7 +29,7 @@
          <div class="container">
             <div class="it-contact__wrap fix z-index-3 p-relative">
                <div class="it-contact__shape-1 d-none d-xl-block">
-                  <img src="assets/img/contact/shape-2-1.png" alt="">
+                  <img src="<?=base_url()?>public/web/assets/img/contact/shape-2-1.png" alt="">
                </div>
                <div class="row align-items-end">
                   <div class="col-xl-7">

@@ -1,7 +1,8 @@
 <main>
 
    <!-- breadcrumb-area-start -->
-   <div class="it-breadcrumb-area it-breadcrumb-bg" data-background="<?= base_url() ?>public/web/assets/img/breadcrumb/breadcrumb.jpg">
+   <div class="it-breadcrumb-area it-breadcrumb-bg"
+      data-background="<?= base_url() ?>public/web/assets/img/breadcrumb/breadcrumb.jpg">
       <div class="container">
          <div class="row ">
             <div class="col-md-12">
@@ -28,7 +29,8 @@
       <div class="container">
          <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6">
-               <div class="it-about-4-thumb-wrap d-flex align-items-center justify-content-center justify-content-lg-end">
+               <div
+                  class="it-about-4-thumb-wrap d-flex align-items-center justify-content-center justify-content-lg-end">
                   <div class="it-about-4-thumb-double d-flex flex-column">
                      <img class="mb-20" src="<?= base_url() ?>public/web/assets/img/about/thumb-4-1.jpg" alt="">
                      <img src="<?= base_url() ?>public/web/assets/img/about/thumb-4-2.jpg" alt="">
@@ -44,12 +46,15 @@
                      <img src="<?= base_url() ?>public/web/assets/img/category/inner.svg" alt="">
                      about us
                   </span>
-                  <h2 class="it-section-title-3 pb-30">we are always ensure best
-                     course for your <span>learning</span>
+                  <h2 class="it-section-title-3 pb-30">We Empower Your <span>learning</span> Journey with the best Courses
                   </h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                     nostrud exercitation ullamco laboris nisi.</p>
+                  <p>Fxcareers Dubai is a valued member of the FXCareers Global network. We are a
+                     respected professional institution dedicated to offering complete training and
+                     education in the finance business, with a special focus on Forex and Leading Global
+                     Stock Markets, and have been certified by KHDA- Government of Dubai.</p>
+                  <p>Along with your official educational degree, we provide one of the top certification
+                     courses that will not only help you become a standout trader, but also help you
+                     advance your career.</p>
                </div>
                <div class="it-about-3-mv-box">
                   <div class="row">
@@ -59,9 +64,10 @@
                               <span><i class="flaticon-video-1"></i></span>
                            </div>
                            <div class="it-about-3-mv-item">
-                              <span class="it-about-3-mv-title">Sharing a Screen</span>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                 tempor incididunt ut labore et dolore magna aliqua.</p>
+                              <span class="it-about-3-mv-title">Master the Markets</span>
+                              <p>Conquer the dynamic world of Forex, stocks,
+                                 commodities, and beyond with confidence. Learn from industry leaders and
+                                 develop the skills to navigate these markets effectively.</p>
                            </div>
                         </div>
                      </div>
@@ -71,9 +77,10 @@
                               <span><i class="flaticon-puzzle"></i></span>
                            </div>
                            <div class="it-about-3-mv-item">
-                              <span class="it-about-3-mv-title">presenter Control</span>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                 tempor incididunt ut labore et dolore magna aliqua.</p>
+                              <span class="it-about-3-mv-title">Unlock Potential</span>
+                              <p>Transform from an aspiring trader to a skilled professional.
+                                 FX Careers.ae equips you with the knowledge and strategies needed to
+                                 achieve consistent profitability in the financial markets</p>
                            </div>
                         </div>
                      </div>
@@ -84,8 +91,10 @@
                      <span>
                         admission open
                         <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M11 1.24023L16 7.24023L11 13.2402" stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                           <path d="M1 7.24023H16" stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M11 1.24023L16 7.24023L11 13.2402" stroke="currentcolor" stroke-width="1.5"
+                              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M1 7.24023H16" stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10"
+                              stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                      </span>
                   </a>
@@ -102,7 +111,8 @@
    <!-- funfact-area-start -->
    <div class="it-funfact-area z-index-5">
       <div class="container">
-         <div class="it-funfact-bg-wrap theme-bg" data-background="<?= base_url() ?>public/web/assets/img/funfact/funfact-bg.png">
+         <div class="it-funfact-bg-wrap theme-bg"
+            data-background="<?= base_url() ?>public/web/assets/img/funfact/funfact-bg.png">
             <div class="row gx-0">
                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                   <div class="it-funfact-item d-flex align-items-center">
@@ -155,7 +165,8 @@
    <!-- funfact-area-end -->
 
    <!-- testimonial-area-start -->
-   <div class="it-testimonial-area it-testimonial-ptb it-sub-bg-none it-testimonial-bg fix p-relative" data-background="<?= base_url() ?>public/web/assets/img/testimonial/testimonial-bg.jpg">
+   <div class="it-testimonial-area it-testimonial-ptb it-sub-bg-none it-testimonial-bg fix p-relative"
+      data-background="<?= base_url() ?>public/web/assets/img/testimonial/testimonial-bg.jpg">
       <div class="it-testimonial-shape-1 d-none d-xl-block">
          <img src="<?= base_url() ?>public/web/assets/img/testimonial/shape-2-1.png" alt="">
       </div>
@@ -170,8 +181,11 @@
                      </span>
                      <h4 class="it-section-title">Creating A Community Of Life Long
                         <span class="p-relative z-index">Learners.
-                           <svg class="title-shape-3" width="169" height="65" viewBox="0 0 169 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M73.9865 8.52241C79.0935 6.03398 83.1809 4.26476 89.5018 3.31494C94.8148 2.51659 100.239 2.08052 105.59 1.95274C121.035 1.5839 135.743 4.94481 147.12 9.7789C159.246 14.931 167.348 22.7171 166.701 31.8511C165.923 42.8363 151.983 52.0035 134.146 57.1364C110.893 63.8284 82.3457 64.1305 59.197 61.1289C38.1374 58.3982 12.2599 51.9446 4.20444 40.1836C-2.8133 29.9382 12.6851 18.2085 28.1538 11.6691C40.9733 6.24978 56.315 2.97602 71.4123 4.09034C82.5481 4.91227 93.8269 6.91079 103.074 10.0494C113.489 13.5844 120.759 18.7016 128.482 23.7722" stroke="var(--it-theme-1)" stroke-width="3" stroke-linecap="round" />
+                           <svg class="title-shape-3" width="169" height="65" viewBox="0 0 169 65" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M73.9865 8.52241C79.0935 6.03398 83.1809 4.26476 89.5018 3.31494C94.8148 2.51659 100.239 2.08052 105.59 1.95274C121.035 1.5839 135.743 4.94481 147.12 9.7789C159.246 14.931 167.348 22.7171 166.701 31.8511C165.923 42.8363 151.983 52.0035 134.146 57.1364C110.893 63.8284 82.3457 64.1305 59.197 61.1289C38.1374 58.3982 12.2599 51.9446 4.20444 40.1836C-2.8133 29.9382 12.6851 18.2085 28.1538 11.6691C40.9733 6.24978 56.315 2.97602 71.4123 4.09034C82.5481 4.91227 93.8269 6.91079 103.074 10.0494C113.489 13.5844 120.759 18.7016 128.482 23.7722"
+                                 stroke="var(--it-theme-1)" stroke-width="3" stroke-linecap="round" />
                            </svg>
                         </span>
                      </h4>
@@ -219,28 +233,44 @@
                               <div class="it-testimonial-slide-info">
                                  <h4 class="it-testimonial-user-name">Courtney Henry</h4>
                                  <span>happy customer</span>
-                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.</p>
                               </div>
                            </div>
                            <div class="it-testimonial-slide-item">
                               <div class="it-testimonial-slide-info">
                                  <h4 class="it-testimonial-user-name">Courtney Henry</h4>
                                  <span>happy customer</span>
-                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.</p>
                               </div>
                            </div>
                            <div class="it-testimonial-slide-item">
                               <div class="it-testimonial-slide-info">
                                  <h4 class="it-testimonial-user-name">Courtney Henry</h4>
                                  <span>happy customer</span>
-                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.</p>
                               </div>
                            </div>
                            <div class="it-testimonial-slide-item">
                               <div class="it-testimonial-slide-info">
                                  <h4 class="it-testimonial-user-name">Courtney Henry</h4>
                                  <span>happy customer</span>
-                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                 <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.</p>
                               </div>
                            </div>
                         </div>
@@ -274,26 +304,33 @@
                   <span class="it-section-subtitle">Top Popular Course</span>
                   <h4 class="it-section-title">Hi Study Course
                      <span class="p-relative z-index">student
-                        <svg class="title-shape-2" width="168" height="65" viewBox="0 0 168 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M73.3761 8.49147C78.4841 6.01353 82.5722 4.25154 88.8933 3.3035C94.2064 2.50664 99.6305 2.0701 104.981 1.94026C120.426 1.56549 135.132 4.90121 146.506 9.70405C158.628 14.8228 166.725 22.5638 166.074 31.6501C165.291 42.5779 151.346 51.7039 133.508 56.8189C110.253 63.4874 81.7065 63.8025 58.5605 60.8285C37.5033 58.123 11.6304 51.7165 3.58132 40.0216C-3.43085 29.8337 12.0728 18.1578 27.544 11.645C40.3656 6.24763 55.7082 2.98328 70.8043 4.08403C81.9391 4.89596 93.2164 6.87822 102.462 9.99561C112.874 13.5066 120.141 18.5932 127.862 23.6332" stroke="var(--it-theme-1)" stroke-width="3" stroke-linecap="round" />
+                        <svg class="title-shape-2" width="168" height="65" viewBox="0 0 168 65" fill="none"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M73.3761 8.49147C78.4841 6.01353 82.5722 4.25154 88.8933 3.3035C94.2064 2.50664 99.6305 2.0701 104.981 1.94026C120.426 1.56549 135.132 4.90121 146.506 9.70405C158.628 14.8228 166.725 22.5638 166.074 31.6501C165.291 42.5779 151.346 51.7039 133.508 56.8189C110.253 63.4874 81.7065 63.8025 58.5605 60.8285C37.5033 58.123 11.6304 51.7165 3.58132 40.0216C-3.43085 29.8337 12.0728 18.1578 27.544 11.645C40.3656 6.24763 55.7082 2.98328 70.8043 4.08403C81.9391 4.89596 93.2164 6.87822 102.462 9.99561C112.874 13.5066 120.141 18.5932 127.862 23.6332"
+                              stroke="var(--it-theme-1)" stroke-width="3" stroke-linecap="round" />
                         </svg>
                      </span>
                      can <br> join with us.
                   </h4>
                </div>
             </div>
-            <?php foreach ($course_details_view as $row) : ?>
+            <?php foreach ($course_details_view as $row): ?>
                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                   <div class="it-course-item">
                      <div class="it-course-thumb mb-20 p-relative">
-                        <a href="<?= base_url() ?>online-detail/<?= str_replace(' ', '-', strtolower($row->course_name)); ?>"><img src="<?= base_url('images/') . $row->course_image; ?>" alt="image"></a>
+                        <a
+                           href="<?= base_url() ?>online-detail/<?= str_replace(' ', '-', strtolower($row->course_name)); ?>"><img
+                              src="<?= base_url('uploads/course/') . $row->course_image; ?>" alt="image"></a>
                         <div class="it-course-thumb-text">
                            <span><?= $row->mode ?></span>
                         </div>
                      </div>
                      <div class="it-course-content">
 
-                        <h4 class="it-course-title pb-5"><a href="<?= base_url() ?>online-detail/<?= str_replace(' ', '-', strtolower($row->course_name)); ?>"><?= $row->course_name ?></a></h4>
+                        <h4 class="it-course-title pb-5"><a
+                              href="<?= base_url() ?>online-detail/<?= str_replace(' ', '-', strtolower($row->course_name)); ?>"><?= $row->course_name ?></a>
+                        </h4>
                         <div class="it-course-info pb-15 mb-25 d-flex justify-content-between">
                            <span><i class="fa-light fa-file-invoice"></i>Lesson <?= $row->lesson ?></span>
                            <span><i class="fa-sharp fa-regular fa-clock"></i><?= $row->duration ?></span>
@@ -302,7 +339,9 @@
 
                         <div class="it-course-price-box d-flex justify-content-between">
                            <span><i>$<?= $row->price ?></i> $120</span>
-                           <a href="<?= base_url() ?>online-detail/<?= str_replace(' ', '-', strtolower($row->course_name)); ?>"><i class="fa-light fa-cart-shopping"></i>Buy Course</a>
+                           <a
+                              href="<?= base_url() ?>online-detail/<?= str_replace(' ', '-', strtolower($row->course_name)); ?>"><i
+                                 class="fa-light fa-cart-shopping"></i>Buy Course</a>
                         </div>
                      </div>
                   </div>
@@ -317,8 +356,10 @@
                   <span>
                      Load More Course
                      <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 1.24023L16 7.24023L11 13.2402" stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M1 7.24023H16" stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11 1.24023L16 7.24023L11 13.2402" stroke="currentcolor" stroke-width="1.5"
+                           stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M1 7.24023H16" stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10"
+                           stroke-linecap="round" stroke-linejoin="round" />
                      </svg>
                   </span>
                </a>
@@ -347,7 +388,7 @@
          </div>
          <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
-               <?php foreach ($teachers as $row) : ?>
+               <?php foreach ($teachers as $row): ?>
                   <div class="it-team-3-item text-center">
                      <div class="it-team-3-thumb fix">
                         <img src="<?= base_url() ?>uploads/teachers/<?= $row->teacher_image ?>" alt="">
@@ -365,7 +406,9 @@
                            </div>
                         </div> -->
                         <div class="it-team-3-author-box">
-                           <h4 class="it-team-3-title"><a href="<?= base_url() ?>mentor/<?= str_replace(' ', '-', strtolower($row->teacher_name)); ?>"><?= $row->teacher_name ?></a></h4>
+                           <h4 class="it-team-3-title"><a
+                                 href="<?= base_url() ?>mentor/<?= str_replace(' ', '-', strtolower($row->teacher_name)); ?>"><?= $row->teacher_name ?></a>
+                           </h4>
                            <span><?= $row->designation ?></span>
                         </div>
                      </div>

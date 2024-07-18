@@ -14,7 +14,7 @@ class curriculum extends MY_Controller
         $this->load->helper('cookie');
         $this->load->library('form_validation');
         $this->load->library('encryption');
-        $this->load->model('admin/curriculum_model', 'curriculum_model');
+        $this->load->model('admin/Curriculum_model', 'Curriculum_model');
         $this->load->helper('security');
 
         date_default_timezone_set('Asia/Kolkata');
@@ -34,7 +34,7 @@ class curriculum extends MY_Controller
     {
         if ($this->session->has_userdata('is_admin_login')) {
             $data = $this->input->post();
-                if ($this->curriculum_model->curriculum_data_submit($data)) {
+                if ($this->Curriculum_model->curriculum_data_submit($data)) {
                     redirect("admin/curriculum/curriculum_view");
                 } else {
                     $data['message'] = '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> Sorry Please Try Again.</div>';
@@ -47,7 +47,7 @@ class curriculum extends MY_Controller
     public function curriculum_view()
     {
         if ($this->session->has_userdata('is_admin_login')) {
-            $data['curriculum_view'] = $this->curriculum_model->curriculum_view();
+            $data['curriculum_view'] = $this->Curriculum_model->curriculum_view();
             $data['view'] = 'admin/curriculum/view_curriculum';
             $this->load->view('admin/layout', $data);
         } else {
@@ -58,7 +58,7 @@ class curriculum extends MY_Controller
     public function curriculum_edit($id)
     {
         if ($this->session->has_userdata('is_admin_login')) {
-            $data['view_curriculum'] = $this->curriculum_model->curriculum_edit($id);
+            $data['view_curriculum'] = $this->Curriculum_model->curriculum_edit($id);
             $data['view'] = 'admin/curriculum/edit_curriculum';
             $this->load->view('admin/layout', $data);
         } else {
@@ -70,7 +70,7 @@ class curriculum extends MY_Controller
     {
         if ($this->session->has_userdata('is_admin_login')) {
             $data = $this->input->post();
-                if ($this->curriculum_model->curriculum_update_data($data)) {
+                if ($this->Curriculum_model->curriculum_update_data($data)) {
                     redirect("admin/curriculum/curriculum_view");
                 } else {
                     $data['message'] = '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> Sorry Please Try Again.</div>';
@@ -83,12 +83,20 @@ class curriculum extends MY_Controller
     public function curriculum_delete($id)
     {
         if ($this->session->has_userdata('is_admin_login')) {
-            if ($this->curriculum_model->curriculum_delete($id)) {
+            if ($this->Curriculum_model->curriculum_delete($id)) {
                 redirect("admin/curriculum/curriculum_view");
             }
         } else {
             redirect('admin/auth/login');
         }
     }
+    public function fetch_topic()
+    {
+        
+        if ($this->input->post('course_id')) {
+            echo $this->Curriculum_model->fetch_topic($this->input->post('course_id'));
+        }
+    }
+    
 }
 ?>

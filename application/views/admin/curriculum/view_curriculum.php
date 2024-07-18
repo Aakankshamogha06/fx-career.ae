@@ -27,8 +27,11 @@
                     <tr>
                       <th>SR NO</th>
                       <th>Course NAME</th>
-                      <th>topic name</th>
-                      <th>sub topic name</th>
+                      <th>Topic name</th>
+                      <th>Sub topic name</th>
+                      <th>Link</th>
+                      <th>Duration</th>
+                      <th>Language</th>
                       <th style="width: 150px;" class="text-right">OPTION</th>
                     </tr>
                   </thead>
@@ -41,6 +44,10 @@
                         <td><?= $row->course_id ?></td>
                         <td><?= $row->topic_name ?></td>
                         <td><?= $row->sub_topic_name ?></td>
+                        <td><?= $row->video_link ?></td>
+                        <td><?= $row->video_duration ?></td>
+                        <td><?= $row->lang ?></td>
+                        <!-- <td><?= $row->sub_topic_name ?></td> -->
                         <td class="text-right">
                           <a href="<?= base_url('admin/curriculum/curriculum_edit/' . $row->id); ?>">
                             <i class="fas fa-edit" style="font-size: 24px; color: blue;"></i>
@@ -85,6 +92,7 @@ src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js"></script
       });
     });
   </script>
+
 </body>
 
 </html>

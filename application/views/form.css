@@ -1,0 +1,244 @@
+
+  :focus-visible {
+    outline: hsl(var(--light-blue-900)) auto 1px;
+    outline-offset: 0;
+  }
+
+  .visually-hidden {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    /* 1 */
+    width: 1px;
+  }
+
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    background-color: var(--button-background-color);
+    border: var(--button-border);
+    border-radius: var(--button-border-radius);
+    color: var(--button-text-color);
+    display: block;
+    font-family: var(--button-text-font-family);
+    font-size: var(--button-text-font-size);
+    font-weight: var(--button-text-font-weight);
+    letter-spacing: var(--button-text-letter-spacing);
+    line-height: var(--button-height);
+    padding: var(--button-padding);
+    text-align: var(--button-text-align);
+    text-decoration: var(--button-text-decoration);
+    text-shadow: var(--button-text-shadow);
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+      color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  button:active {
+    transform: translateY(1px);
+  }
+
+  button:hover,
+  button:focus {
+    background-color: hsl(var(--light-blue-900));
+    color: hsl(var(--white));
+  }
+
+  button:focus-visible {
+    outline-offset: 4px;
+  }
+
+  button.disabled,
+  button:disabled {
+    background-color: hsl(var(--gray-900));
+  }
+
+  @media only screen and (min-width: 640px) {
+    button {
+      display: inline-block;
+      vertical-align: top;
+      width: auto;
+    }
+  }
+
+  /* --- Simple Buttons --- */
+
+  .button--simple,
+  .button--simple:active,
+  .button--simple:visited {
+    background-color: transparent;
+    color: hsl(var(--blue-900));
+    text-shadow: none;
+  }
+
+  .button--simple:hover,
+  .button--simple:focus {
+    background-color: transparent;
+    color: hsl(var(--light-blue-900));
+  }
+
+  .progress-form__tabs {
+    column-gap: 20PX;
+  }
+
+
+
+  .progress-form__tabs-item {
+    --button-background-color: transparent;
+    --button-border-width: 5px;
+    --button-border-style: solid;
+    --button-border-color: #DDD;
+    --button-border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
+    --button-border-radius: 0;
+    --button-height: 1.4;
+    --button-text-align: left;
+    --button-text-color: hsl(var(--blue-900));
+    --button-text-font-size: 1.4rem;
+    --button-text-letter-spacing: 0.025em;
+    --button-text-shadow: none;
+
+    background-color: var(--button-background-color);
+    border: 0;
+    border-top: var(--button-border);
+    border-radius: var(--button-border-radius);
+    color: var(--button-text-color);
+    display: none;
+    font-size: var(--button-text-font-size);
+    letter-spacing: var(--button-text-letter-spacing);
+    line-height: var(--button-height);
+    position: relative;
+    text-align: var(--button-text-align);
+    text-shadow: var(--button-text-shadow);
+    transition: color 0.2s ease-in-out;
+    white-space: normal;
+  }
+
+  .progress-form__tabs-item:active {
+    transform: none;
+  }
+
+  .progress-form__tabs-item:hover,
+  .progress-form__tabs-item:focus {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .progress-form__tabs-item::before {
+    background-color: var(--it-theme-1);
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: -5px;
+    transition: width 0.2s ease-in-out;
+    width: 0;
+  }
+
+  .progress-form__tabs-item>.step {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .progress-form__tabs-item {
+    width: 100%;
+  }
+
+  .form__error-text {
+    color: #ee3f3f;
+  }
+
+  @media only screen and (min-width: 640px) {
+    .progress-form__tabs-item {
+      display: block;
+    }
+  }
+
+  .form-select:focus {
+    border-color: var(--it-theme-1);
+    outline: 0;
+    box-shadow: none;
+  }
+.mtt-5{
+  margin-top: 3rem;
+}
+  select {
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='hsl(0, 0%, 13%)' d='M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z'/%3E%3C/svg%3E'");
+    background-repeat: no-repeat;
+    background-position: right 2rem center;
+    background-size: 0.7em auto; */
+    padding: 10px 20px !important;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    background-position: right 1.75rem center !important;
+  }
+
+  /* --- Current Step --- */
+
+  .progress-form__tabs-item[aria-selected="true"] {
+    display: block;
+  }
+
+  .progress-form__tabs-item[aria-selected="true"]::before {
+    width: 50%;
+  }
+
+
+  /* --- Disabled Step --- */
+
+
+  .progress-form__tabs-item[aria-disabled="true"] {
+    --button-background-color: transparent;
+    --button-text-color: hsl(var(--blue-100));
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+
+  }
+
+  /* --- Completed Step --- */
+
+  .progress-form__tabs-item[data-complete="true"]::before {
+    width: 100%;
+  }
+
+  .progress-form__tabs-item[data-complete="true"]>.step {
+    color: var(--it-theme-1);
+  }
+
+  .progress-form input {
+    border-radius: 5px;
+  }
+
+  .progress-form__tabs-item[aria-selected="true"]>.step {
+    color: var(--it-theme-1);
+  }
+
+  .progress-form__tabs-item[aria-disabled="true"] {
+    color: #ddd;
+  }
+
+  .progress-form label {
+    font-weight: 600;
+  }
+
+  legend {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  label.form__choice-wrapper {
+    display: flex;
+    align-items: center;
+  }

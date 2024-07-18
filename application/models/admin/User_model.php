@@ -98,6 +98,39 @@
             return false;
         }
     }
+	public function update_user($user_id, $data)
+	{
+		$user = $this->db->get_where('users', ['id' => $user_id])->row();
+		if ($user) {
+			$update_data = [];
+			if (isset($data['firstname'])) {
+				$update_data['firstname'] = $data['firstname'];
+			}
+
+			if (isset($data['lastname'])) {
+				$update_data['lastname'] = $data['lastname'];
+			}
+
+			if (isset($data['email'])) {
+				$update_data['email'] = $data['email'];
+			}
+	
+			if (isset($data['mobile_no'])) {
+				$update_data['mobile_no'] = $data['mobile_no'];
+			}
+
+			if (isset($data['username'])) {
+				$update_data['username'] = $data['username'];
+			}
+			$this->db->where('id', $user_id);
+			$this->db->update('users', $update_data);
+	
+			return true; 
+		}
+	
+		return false;
+	}
+
 	
 	}
 

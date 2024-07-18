@@ -12,12 +12,12 @@ class detail_model extends CI_Model
             'author' => $data['author'],
             'mode' => $data['mode'],
             'lesson' => $data['lesson'],
-            'description' => $data['description'],
 			'duration' => $data['duration'],
 			'category' => $data['category'],
 			'language' => $data['language'],
             'price' => $data['price'],
             'long_description' => $data['long_description'],
+			'status' => $data['status'],
             
 		];
 		if ($this->db->insert('detail', $data)) {
@@ -30,10 +30,10 @@ class detail_model extends CI_Model
 
 	public function detail_view()
 {
-    $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
-    
-
-    FROM `detail`;");
+    $result = $this->db->query("SELECT *,
+    (SELECT category_name FROM course_category WHERE detail.category = course_category.id) AS category,
+    (SELECT language_name FROM course_language WHERE detail.language = course_language.id) AS language
+FROM detail;");
 
     if ($result->num_rows() > 0) {
         return $result->result();
@@ -41,13 +41,27 @@ class detail_model extends CI_Model
         return 0;
     }
 }
+public function details()
+{
+    $result = $this->db->query("SELECT *,
+    (SELECT category_name FROM course_category WHERE detail.category = course_category.id) AS category,
+    (SELECT language_name FROM course_language WHERE detail.language = course_language.id) AS language
+FROM detail
+WHERE status = 'active';
+");
 
+    if ($result->num_rows() > 0) {
+        return $result->result();
+    } else {
+        return 0;
+    }
+}
 public function course_detail_view($id)
 {
     $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
     
 
-    FROM `detail` WHERE id=$id;");
+    FROM `detail` WHERE id=$id ;");
 
     if ($result->num_rows() > 0) {
         return $result->result();
@@ -60,10 +74,8 @@ public function course_detail_view($id)
 	
 public function online_course()
 {
-    $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
-    
-
-    FROM `detail` WHERE mode='online';");
+    $result = $this->db->query("SELECT *, (SELECT category_name FROM course_category WHERE detail.category = course_category.id) AS category 
+	FROM detail WHERE mode = 'online' AND status = 'active';");
 
     if ($result->num_rows() > 0) {
         return $result->result();
@@ -76,7 +88,7 @@ public function online_course_index()
     $result = $this->db->query("SELECT *,
        (SELECT category_name FROM course_category WHERE detail.category = course_category.id) AS category
 		FROM detail
-		WHERE mode = 'online'
+		WHERE mode = 'online' AND status = 'active'
 		LIMIT 3;");
 
     if ($result->num_rows() > 0) {
@@ -88,7 +100,7 @@ public function online_course_index()
 public function onlineBasic($id)
 {
 $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
-FROM `detail` WHERE REPLACE(LOWER(detail.course_name), ' ', '-')='$id' and detail.mode='online'");
+FROM `detail` WHERE REPLACE(LOWER(detail.course_name), ' ', '-')='$id' and detail.mode='online' AND detail.status = 'active'");
 if ($result->num_rows() > 0) {
 		return $result->result();
 	} else {
@@ -99,7 +111,7 @@ public function offlineBasic($id)
 {
 $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
 
-FROM `detail` WHERE REPLACE(LOWER(detail.course_name), ' ', '-')='$id' and detail.mode='offline'");
+FROM `detail` WHERE REPLACE(LOWER(detail.course_name), ' ', '-')='$id' and detail.mode='offline' AND status = 'active'");
 if ($result->num_rows() > 0) {
 		return $result->result();
 	} else {
@@ -114,7 +126,7 @@ if ($result->num_rows() > 0) {
         $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
     
 
-    FROM `detail` WHERE mode='offline';");
+    FROM `detail` WHERE mode='offline' AND status = 'active';");
 
     if ($result->num_rows() > 0) {
         return $result->result();
@@ -127,7 +139,7 @@ if ($result->num_rows() > 0) {
         $result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
     
 
-    FROM `detail` WHERE mode='recorded';");
+    FROM `detail` WHERE mode='recorded' AND status = 'active';");
 
     if ($result->num_rows() > 0) {
         return $result->result();
@@ -140,7 +152,7 @@ if ($result->num_rows() > 0) {
 	$result = $this->db->query("SELECT *,(SELECT category_name FROM course_category WHERE detail.category = course_category.id)AS category
 	
 
-	FROM `detail` WHERE REPLACE(LOWER(detail.course_name), ' ', '-')='$id' and detail.mode='recorded'");
+	FROM `detail` WHERE REPLACE(LOWER(detail.course_name), ' ', '-')='$id' and detail.mode='recorded' AND status = 'active'");
 	if ($result->num_rows() > 0) {
 			return $result->result();
 		} else {
@@ -154,29 +166,29 @@ if ($result->num_rows() > 0) {
 	}
 
 
-	public function detail_update_data($data,$course_image)
-	{
-		$newdata = [
-			'course_name' => $data['course_name'],
-            'course_image' => $course_image,
-            'author' => $data['author'],
-            'mode' => $data['mode'],
-            'lesson' => $data['lesson'],
-            'description' => $data['description'],
-			'duration' => $data['duration'],
-			'category' => $data['category'],
-			'language' => $data['language'],
-            'price' => $data['price'],
-            'long_description' => $data['long_description'],
-		];
-		$this->db->where('id', $data['id']);
-		if ($this->db->update('detail', $newdata)) {
+	public function detail_update_data($data, $course_image)
+{
+    $newdata = [
+        'course_name' => $data['course_name'],
+        'course_image' => $course_image,
+        'author' => $data['author'],
+        'mode' => $data['mode'],
+        'lesson' => $data['lesson'],
+        'duration' => $data['duration'],
+        'category' => $data['category'],
+        'language' => $data['language'],
+        'price' => $data['price'],
+        'long_description' => $data['long_description'],
+		'status' => $data['status'],
+    ];
+    $this->db->where('id', $data['id']);
+    if ($this->db->update('detail', $newdata)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-			return $newdata;
-		} else {
-			return false;
-		}
-	}
 
 
 	public function detail_edit($id)

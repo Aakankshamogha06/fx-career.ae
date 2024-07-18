@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-// $config['base_url'] = 'https://fxsignals.ae/admin/';
+//  $config['base_url'] = 'https://fxcareers.ae';
  $config['base_url'] = 'http://localhost/fx/';
 
 /*

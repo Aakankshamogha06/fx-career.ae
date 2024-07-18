@@ -31,7 +31,7 @@
          <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                <div class="it-course-item">
                   <div class="it-course-thumb mb-20 p-relative">
-                     <a href="<?=base_url()?>online-detail/<?=str_replace(' ','-',strtolower($row->course_name));?>"><img src="<?=base_url('images/').$row->course_image;?>" alt="image"></a>
+                     <a href="<?=base_url()?>online-detail/<?=str_replace(' ','-',strtolower($row->course_name));?>"><img src="<?=base_url('uploads/course/').$row->course_image;?>" alt="image"></a>
                      <div class="it-course-thumb-text">
                         <span><?=$row->mode?></span>
                      </div>

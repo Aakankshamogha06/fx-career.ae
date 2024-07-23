@@ -67,43 +67,43 @@
     <!-- course-area-end -->
     <!-- Modal -->
     <div class="modal fade" id="InquiryModal" tabindex="-1" aria-labelledby="InquiryModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="InquiryModalLabel">Enqury About One To One Session</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="" class="mt-4">
-                        <div class="row g-4">
-
-                            <div class="col-lg-6">
-                                <div class="it-signup-input mb-20">
-                                    <input type="email" placeholder="Email *" class="border">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="it-signup-input mb-20">
-                                    <input type="tel" placeholder="Mobile*" class="border">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="it-signup-input mb-20">
-                                    <textarea name="" id="" cols="30" rows="3" class="border" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class=" ">
-                                    <button class="it-btn border-0">Submit<i class="ps-2 ri-arrow-right-line"></i></button>
-                                </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="InquiryModalLabel">Enquiry About One To One Session</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('website/book_session'); ?>" method="post" class="mt-4">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="it-signup-input mb-20">
+                                <input type="email" name="email" placeholder="Email *" class="border" required>
                             </div>
                         </div>
-                    </form>
-                </div>
-
+                        <div class="col-lg-6">
+                            <div class="it-signup-input mb-20">
+                                <input type="tel" name="mobile" placeholder="Mobile*" class="border" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="it-signup-input mb-20">
+                                <textarea name="message" cols="30" rows="3" class="border" placeholder="Message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="">
+                                <button class="it-btn border-0">Submit<i class="ps-2 ri-arrow-right-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
+
+</div>
+
 
 </main>

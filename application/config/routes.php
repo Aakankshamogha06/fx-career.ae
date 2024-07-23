@@ -303,3 +303,4 @@ $route['trade_idea_api/trade_idea'] = 'trade_idea_api/trade_idea_get';
 $route['trade_idea_api/trade_idea_by_id/(:/num)'] = 'trade_idea_api/trade_idea_by_id_get/$1';
 $route['one_to_one_session_api/one_to_one_session'] = 'one_to_one_session_api/one_to_one_session_get';
 $route['one_to_one_session_api/one_to_one_session_by_id/(:/num)'] = 'one_to_one_session_api/one_to_one_session_by_id_get/$1';
+$route['one_to_one_session_api/book_session'] = 'one_to_one_session_api/book_session_post';

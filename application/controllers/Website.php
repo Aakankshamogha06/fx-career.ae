@@ -22,6 +22,7 @@ class Website extends CI_Controller
         $this->load->model('admin/one_to_one_session_model', 'one_to_one_session_model');
         $this->load->model('admin/Form_model', 'Form_model');
         $this->load->model('admin/questions_model', 'questions_model');
+        $this->load->model('admin/book_session_model', 'book_session_model');
         $this->load->helper('url');
     }
     public function index()
@@ -72,6 +73,40 @@ class Website extends CI_Controller
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }
+   
+    public function book_session()
+    {
+        // Form validation rules
+        $this->form_validation->set_rules('mobile', 'Phone', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[book_session.email]');
+        $this->form_validation->set_rules('message', 'Message', 'trim|required');
+
+        if ($this->form_validation->run() === FALSE) {
+            // Validation failed, reload the registration form with errors
+            $data['gallery_view'] = $this->gallery_model->gallery();
+            $data['one_to_one_session_view'] = $this->one_to_one_session_model->one_to_one_session_view();
+            $this->load->view('frontend/include/header');
+            $this->load->view('frontend/one-to-one-session', $data);
+            $this->load->view('frontend/include/footer', $data);
+        } else {
+            // Validation passed, insert user data into database
+            $data = array(
+                'message' => $this->input->post('message'),
+                'mobile' => $this->input->post('mobile'),
+                'email' => $this->input->post('email'),
+                
+            );
+
+            if ($this->book_session_model->insert_user($data)) {
+                $this->session->set_flashdata('success', 'Registration successful. Please login.');
+                redirect(base_url());
+            } else {
+                $this->session->set_flashdata('error', 'An error occurred. Please try again.');
+                redirect('website/one_to_one_session');
+            }
+        }
+    }
+    
     public function become_partner()
     {
         $data['gallery_view'] = $this->gallery_model->gallery();

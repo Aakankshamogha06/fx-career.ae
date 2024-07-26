@@ -14,7 +14,7 @@ class Contact_us extends CI_Controller
 
     public function add_contact_us()
     {
-        $data['view'] = 'admin/frontend/contact';
+        $data['view'] = 'admin/frontend/contact_us';
         $this->load->view('admin/layout', $data);
     }
 

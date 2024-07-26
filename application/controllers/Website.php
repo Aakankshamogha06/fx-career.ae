@@ -61,7 +61,7 @@ class Website extends CI_Controller
         $data['one_to_one_session_view'] = $this->one_to_one_session_model->one_to_one_session_view();
         $data['gallery_view'] = $this->gallery_model->gallery();
         $this->load->view('frontend/include/header');
-        $this->load->view('frontend/one-to-one-session',$data);
+        $this->load->view('frontend/one-to-one-session', $data);
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }
@@ -73,7 +73,7 @@ class Website extends CI_Controller
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }
-   
+
     public function book_session()
     {
         // Form validation rules
@@ -94,7 +94,7 @@ class Website extends CI_Controller
                 'message' => $this->input->post('message'),
                 'mobile' => $this->input->post('mobile'),
                 'email' => $this->input->post('email'),
-                
+
             );
 
             if ($this->book_session_model->insert_user($data)) {
@@ -106,7 +106,7 @@ class Website extends CI_Controller
             }
         }
     }
-    
+
     public function become_partner()
     {
         $data['gallery_view'] = $this->gallery_model->gallery();
@@ -120,7 +120,7 @@ class Website extends CI_Controller
         $data['trade_idea_view'] = $this->trade_idea_model->trade_idea_view();
         $data['gallery_view'] = $this->gallery_model->gallery();
         $this->load->view('frontend/include/header');
-        $this->load->view('frontend/trade-idea',$data);
+        $this->load->view('frontend/trade-idea', $data);
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }
@@ -156,7 +156,7 @@ class Website extends CI_Controller
         $data['captcha'] = $this->generate_captcha();
         $data['gallery_view'] = $this->gallery_model->gallery();
         $this->load->view('frontend/include/header');
-        $this->load->view('frontend/register',$data);
+        $this->load->view('frontend/register', $data);
         $this->load->view('frontend/include/newsletter');
         $this->load->view('frontend/include/footer', $data);
     }
@@ -273,7 +273,8 @@ class Website extends CI_Controller
         $this->load->view('frontend/include/footer', $data);
     }
 
-    public function webadd() {
+    public function webadd()
+    {
         // Form validation rules
         $this->form_validation->set_rules('firstname', 'First Name', 'trim|required');
         $this->form_validation->set_rules('lastname', 'Last Name', 'trim|required');
@@ -285,11 +286,11 @@ class Website extends CI_Controller
 
         if ($this->form_validation->run() === FALSE) {
             // Validation failed, reload the registration form with errors
-            $data['captcha'] = $this->generate_captcha(); 
-        $data['gallery_view'] = $this->gallery_model->gallery();
+            $data['captcha'] = $this->generate_captcha();
+            $data['gallery_view'] = $this->gallery_model->gallery();
             $this->load->view('frontend/include/header');
             $this->load->view('frontend/register', $data);
-            $this->load->view('frontend/include/footer',$data);
+            $this->load->view('frontend/include/footer', $data);
         } else {
             // Validation passed, insert user data into database
             $data = array(
@@ -321,15 +322,12 @@ class Website extends CI_Controller
         if ($user_input === $captcha_code) {
 
             return TRUE;
-
         } else {
 
             $this->form_validation->set_message('check_captcha', 'The CAPTCHA code entered is incorrect.');
 
             return FALSE;
-
         }
-
     }
 
     private function generate_captcha()
@@ -342,8 +340,6 @@ class Website extends CI_Controller
         $data['captcha']['image'] = $this->create_captcha_image($captcha_code);
 
         return $data['captcha'];
-
-
     }
 
     private function create_captcha_image($captcha_code)
@@ -365,74 +361,123 @@ class Website extends CI_Controller
         return $base64_image;
     }
 
-public function form()
-{
-    $data['questions'] = $this->questions_model->questions();
-    $data['gallery_view'] = $this->gallery_model->gallery();
-    $data['teachers'] = $this->teacher_model->teacher();
-    $data['blog_detail_view'] = $this->blog_detail_model->blog_detail();
-    $data['course_details_view'] = $this->detail_model->online_course_index();
-    $this->load->view('frontend/include/header');
-    $this->load->view('frontend/form', $data);
-    $this->load->view('frontend/include/newsletter');
-    $this->load->view('frontend/include/footer', $data);
-}
+    public function form()
+    {
+        $data['questions'] = $this->questions_model->questions();
+        $data['gallery_view'] = $this->gallery_model->gallery();
+        $data['teachers'] = $this->teacher_model->teacher();
+        $data['blog_detail_view'] = $this->blog_detail_model->blog_detail();
+        $data['course_details_view'] = $this->detail_model->online_course_index();
+        $this->load->view('frontend/include/header');
+        $this->load->view('frontend/form', $data);
+        $this->load->view('frontend/include/newsletter');
+        $this->load->view('frontend/include/footer', $data);
+    }
 
 
-public function submit() {
-    if ($this->input->server('REQUEST_METHOD') === 'POST') {
-        $score = 0;
+    public function submit()
+    {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            $score = 0;
 
-        // Fetch questions from the database
-        $questions = $this->Form_model->get_questions();
+            // Fetch questions from the database
+            $questions = $this->Form_model->get_questions();
 
-        foreach ($questions as $question) {
-            $question_id = $question->id;
-            $correct_answer = $question->correct_answer; // Adjust according to your database structure
+            foreach ($questions as $question) {
+                $question_id = $question->id;
+                $correct_answer = $question->correct_answer; // Adjust according to your database structure
 
-            // Retrieve user's answer from POST data
-            $user_answer = $this->input->post('question_' . $question_id);
+                // Retrieve user's answer from POST data
+                $user_answer = $this->input->post('question_' . $question_id);
 
-            // Compare user's answer with correct answer
-            if ($user_answer && $user_answer === $correct_answer) {
-                $score++;
+                // Compare user's answer with correct answer
+                if ($user_answer && $user_answer === $correct_answer) {
+                    $score++;
+                }
             }
+
+            // For debugging, check if $score is incremented correctly
+            echo "Score: " . $score;
+
+            // If score is correctly calculated, proceed to save form data
+            $data = array(
+                'first_name' => $this->input->post('first_name'),
+                'last_name' => $this->input->post('last_name'),
+                'email_address' => $this->input->post('email_address'),
+                'phone_number' => $this->input->post('phone_number'),
+                'address' => $this->input->post('address'),
+                'product_purchase' => $this->input->post('product_purchase'),
+                'address_state' => $this->input->post('address_state'),
+                'product_satisfaction' => $this->input->post('product_satisfaction'),
+                'referal_first_name' => $this->input->post('referal_first_name'),
+                'referal_last_name' => $this->input->post('referal_last_name'),
+                'referal_email_address' => $this->input->post('referal_email_address'),
+                'referal_phone_number' => $this->input->post('referal_phone_number'),
+                'product_feedback' => $this->input->post('product_feedback'),
+                'score' => $score
+                // Add other fields as needed
+            );
+
+            // Save data to database
+            $this->Form_model->save_form_data($data);
+
+            // Redirect to results page or home based on your logic
+            redirect('website/results');
+            return;
         }
 
-        // For debugging, check if $score is incremented correctly
-        echo "Score: " . $score;
-
-        // If score is correctly calculated, proceed to save form data
-        $data = array(
+        // If form was not submitted via POST, redirect to home
+        redirect('home');
+    }
+    public function submit_form() {
+        
+        
+        // Collect form data
+        $data = [
             'first_name' => $this->input->post('first_name'),
             'last_name' => $this->input->post('last_name'),
             'email_address' => $this->input->post('email_address'),
             'phone_number' => $this->input->post('phone_number'),
             'address' => $this->input->post('address'),
-            'product_purchase' => $this->input->post('product_purchase'),
+            'preffered_topic' => $this->input->post('preffered_topic'),
             'address_state' => $this->input->post('address_state'),
             'product_satisfaction' => $this->input->post('product_satisfaction'),
             'referal_first_name' => $this->input->post('referal_first_name'),
             'referal_last_name' => $this->input->post('referal_last_name'),
             'referal_email_address' => $this->input->post('referal_email_address'),
             'referal_phone_number' => $this->input->post('referal_phone_number'),
-            'product_feedback' => $this->input->post('product_feedback'),
-            'score' => $score
-            // Add other fields as needed
-        );
+            'product_feedback' => $this->input->post('product_feedback')
+        ];
 
-        // Save data to database
-        $this->Form_model->save_form_data($data);
+        // Save user details to database
+        $user_id = $this->Form_model->save_user_details($data);
+        
+        // Calculate score
+        $questions = $this->Form_model->get_questions();
+        $score = 0;
+        
+        foreach ($questions as $question) {
+            $user_answer = $this->input->post('question_' . $question->id);
+            if ($user_answer == $question->correct_answer) {
+                $score++;
+            }
+        }
 
-        // Redirect to results page or home based on your logic
-        redirect('website/results');
-        return;
+        // Save score to database
+        $this->Form_model->save_user_score($user_id, $score);
+
+        // Redirect to result view with score
+        $this->session->set_flashdata('score', $score);
+        redirect('results');
     }
 
-    // If form was not submitted via POST, redirect to home
-    redirect('home');
-}
+    public function show_result() {
+        $score = $this->session->flashdata('score');
+        if ($score === NULL) {
+            redirect('book');
+        }
 
-
+        $data['score'] = $score;
+        $this->load->view('results', $data);
+    }
 }
-?>

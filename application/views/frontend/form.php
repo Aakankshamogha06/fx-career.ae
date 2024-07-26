@@ -1,4 +1,125 @@
 <style>
+  .radial-progress {
+    margin: 25px;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    background-color: #d7d7d7;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 480px) {
+    .radial-progress {
+      width: 85px;
+      height: 85px;
+    }
+  }
+
+  .radial-progress .circle .mask,
+  .radial-progress .circle .fill,
+  .radial-progress .circle .shadow {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 480px) {
+
+    .radial-progress .circle .mask,
+    .radial-progress .circle .fill,
+    .radial-progress .circle .shadow {
+      width: 85px;
+      height: 85px;
+    }
+  }
+
+  .radial-progress .circle .mask,
+  .radial-progress .circle .fill {
+    -webkit-backface-visibility: hidden;
+    transition: -webkit-transform 1s;
+    transition: -ms-transform 1s;
+    transition: transform 1s;
+  }
+
+  .radial-progress .circle .mask.reanimate,
+  .radial-progress .circle .fill.reanimate {
+    transition: -webkit-transform 0s;
+    transition: -ms-transform 0s;
+    transition: transform 0s;
+  }
+
+  .radial-progress .circle .mask.reset,
+  .radial-progress .circle .fill.reset {
+    -webkit-transform: rotate(0deg) !important;
+    -ms-transform: rotate(0deg) !important;
+    transform: rotate(0deg) !important;
+  }
+
+  .radial-progress .circle .mask {
+    clip: rect(0px, 120px, 120px, 60px);
+  }
+
+  @media (max-width: 480px) {
+    .radial-progress .circle .mask {
+      clip: rect(0px, 85px, 85px, 42.5px);
+    }
+  }
+
+  .radial-progress .circle .mask .fill {
+    clip: rect(0px, 60px, 120px, 0px);
+    background-color: var(--it-theme-1);
+  }
+
+  @media (max-width: 480px) {
+    .radial-progress .circle .mask .fill {
+      clip: rect(0px, 42.5px, 85px, 0px);
+    }
+  }
+
+  .radial-progress .inset {
+    width: 100px !important;
+    height: 100px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px !important;
+    background-color: #fbfbfb;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+  }
+
+  @media (max-width: 480px) {
+    .radial-progress .inset {
+      width: 66px !important;
+      height: 66px !important;
+      margin: -33px 0 0 -33px !important;
+      line-height: 90px;
+    }
+  }
+
+  .radial-progress .little {
+    font-size: 22px;
+    color: #d7d7d7;
+  }
+
+  @media (max-width: 480px) {
+    .radial-progress .little {
+      font-size: 12px;
+    }
+  }
+
+  .radial-progress .big {
+    font-size: 37px;
+  }
+
+  @media (max-width: 480px) {
+    .radial-progress .big {
+      font-size: 27px;
+    }
+  }
+
   :focus-visible {
     outline: hsl(var(--light-blue-900)) auto 1px;
     outline-offset: 0;
@@ -73,7 +194,8 @@
 
 
   .it-contact__wrap {
-    padding: 85px 50px;}
+    padding: 75px 50px;
+  }
 
   .progress-form__tabs-item {
     --button-background-color: transparent;
@@ -88,7 +210,6 @@
     --button-text-font-size: 1.1rem;
     --button-text-letter-spacing: 0.025em;
     --button-text-shadow: none;
-
     background-color: var(--button-background-color);
     border: 0;
     border-top: var(--button-border);
@@ -143,23 +264,7 @@
     color: #ee3f3f;
   }
 
-  @media only screen and (min-width: 992px) {
-    .progress-form__tabs-item {
-      display: block;
-      
-    }
-  }
-@media(min-width:992px) and (max-width:1199.98px)  {
-.step-form{
-  padding: 30px 30px;
-}
-.progress-form__tabs-item {
-
-        font-size: 17px;
-    }
-}
-
-.form-select:focus {
+  .form-select:focus {
     border-color: var(--it-theme-1);
     outline: 0;
     box-shadow: none;
@@ -246,11 +351,97 @@
     border-radius: 1rem;
     background: #fff;
   }
-  .radio-input{
+
+  .radio-input {
+
     background: #fff;
-    padding: 4px 10px;
+    padding: 10px 10px;
     border-radius: 4px;
     box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+    line-height: 1.2;
+  }
+
+  input.zoom-in:active,
+  input.zoom-in:focus {
+    -webkit-animation: zoom-in 0.45s ease-out;
+    -moz-animation: zoom-in 0.45s ease-out;
+    animation: zoom-in 0.45s ease-out;
+  }
+
+  @-webkit-keyframes zoom-in {
+    0% {
+      -webkit-transform: scale(1);
+    }
+
+    66% {
+      -webkit-transform: scale(0.9);
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @-moz-keyframes zoom-in {
+    0% {
+      -moz-transform: scale(1);
+    }
+
+    66% {
+      -moz-transform: scale(0.9);
+    }
+
+    100% {
+      -moz-transform: scale(1);
+    }
+  }
+
+  @keyframes zoom-in {
+    0% {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+
+    66% {
+      -webkit-transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      -o-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .progress-form__tabs-item {
+      display: block;
+
+    }
+  }
+
+  @media(min-width:992px) and (max-width:1199.98px) {
+    .step-form {
+      padding: 30px 30px;
+    }
+
+    .progress-form__tabs-item {
+      font-size: 15px;
+    }
+
+    .progress-form__tabs-item>.step {
+
+      font-size: 0.9rem;
+    }
   }
 </style>
 <main>
@@ -279,7 +470,7 @@
   <!-- breadcrumb-area-end -->
 
   <!-- contact-area-start -->
-  <div class="it-contact__area pt-120 pb-120 "  >
+  <div class="it-contact__area pt-120 pb-120 ">
     <div class="container">
       <div class="it-contact__wrap fix z-index-3 p-relative step-form" style="background-image:url('<?= base_url() ?>public/web/assets/img/breadcrumb/step-form.jpg')">
 
@@ -320,11 +511,12 @@
               <section id="progress-form__panel-1" role="tabpanel" aria-labelledby="progress-form__tab-1" tabindex="0" class="mtt-5">
                 <div class="row">
                   <div class="mt-3 col-md-6  form__field">
+
                     <label for="first_name">
                       First name
                       <span data-required="true" aria-hidden="true"></span>
                     </label>
-                    <input id="first_name" type="text" name="first_name" autocomplete="given-name" required>
+                    <input id="first_name" type="text" name="first_name" autocomplete="given-name" required class="zoom-in">
                   </div>
 
                   <div class="mt-3 col-md-6 form__field">
@@ -332,21 +524,21 @@
                       Last name
                       <span data-required="true" aria-hidden="true"></span>
                     </label>
-                    <input id="last_name" type="text" name="last_name" autocomplete="family-name" required>
+                    <input id="last_name" type="text" name="last_name" autocomplete="family-name" required class="zoom-in">
                   </div>
                   <div class="mt-3 col-md-6 form__field">
                     <label for="email_address">
                       Email
                       <span data-required="true" aria-hidden="true"></span>
                     </label>
-                    <input id="email_address" type="email" name="email_address" autocomplete="email" inputmode="email" required>
+                    <input id="email_address" type="email" name="email_address" autocomplete="email" inputmode="email" required class="zoom-in">
                   </div>
 
                   <div class="mt-3  col-md-6 form__field">
                     <label for="phone_number">
                       Phone number*
                     </label>
-                    <input id="phone_number" type="tel" name="phone_number" autocomplete="tel" inputmode="tel" required>
+                    <input id="phone_number" type="tel" name="phone_number" autocomplete="tel" inputmode="tel" required class="zoom-in">
                   </div>
                 </div>
 
@@ -354,7 +546,7 @@
                   <label for="phone_number">
                     Address*
                   </label>
-                  <input id="address" type="text" name="address" autocomplete="address" required>
+                  <input id="address" type="text" name="address" autocomplete="address" required class="zoom-in">
                 </div>
                 <div class="d-flex align-items-center mtt-5">
                   <button type="button" class="it-btn " data-action="next">
@@ -372,15 +564,14 @@
                       <label for="address-state">
                         Preferred Topic:
                         <span data-required="true" aria-hidden="true"></span>
-                      </label>
-                      <select id="product_purchase" name="product_purchase" autocomplete="shipping address-level1" class="form-select" required>
-                        <option value="" disabled selected>Please select</option>
+                      </label><br>
+                      <?php
+                      $preffered_topic_fetch_data = $this->Form_model->preffered_topic_fetch();
+                      foreach ($preffered_topic_fetch_data as $data) { ?>
+                        <input type="checkbox" id="product_purchase" name="product_purchase" value="<?php echo $data['id']; ?>">
+                        <label for="<?php echo $data['id']; ?>"><?php echo $data['topic_name']; ?></label>
 
-                        <?php
-                        $preffered_topic_fetch_data = $this->Form_model->preffered_topic_fetch();
-                        foreach ($preffered_topic_fetch_data as $data) { ?>
-                          <option value="<?php echo $data['id']; ?>"><?php echo $data['topic_name']; ?></option>
-                        <?php } ?>
+                      <?php } ?>
 
                       </select>
 
@@ -443,7 +634,7 @@
                       First name
                       <span data-required="true" aria-hidden="true"></span>
                     </label>
-                    <input id="referal_first_name" type="text" name="referal_first_name" autocomplete="given-name">
+                    <input id="referal_first_name" type="text" name="referal_first_name" autocomplete="given-name" class="zoom-in">
                   </div>
 
                   <div class="mt-3 col-md-6 form__field">
@@ -451,21 +642,21 @@
                       Last name
                       <span data-required="true" aria-hidden="true"></span>
                     </label>
-                    <input id="referal_last_name" type="text" name="referal_last_name" autocomplete="family-name">
+                    <input id="referal_last_name" type="text" name="referal_last_name" autocomplete="family-name" class="zoom-in">
                   </div>
                   <div class="mt-3 col-md-6 form__field">
                     <label for="referal_email_address">
                       Email
                       <span data-required="true" aria-hidden="true"></span>
                     </label>
-                    <input id="referal_email_address" type="email" name="referal_email_address" autocomplete="email" inputmode="email">
+                    <input id="referal_email_address" type="email" name="referal_email_address" autocomplete="email" inputmode="email" class="zoom-in">
                   </div>
 
                   <div class="mt-3  col-md-6 form__field">
                     <label for="referal_phone_number">
                       Phone number*
                     </label>
-                    <input id="referal_phone_number" type="tel" name="referal_phone_number" autocomplete="tel" inputmode="tel">
+                    <input id="referal_phone_number" type="tel" name="referal_phone_number" autocomplete="tel" inputmode="tel" class="zoom-in">
                   </div>
                 </div>
 
@@ -473,7 +664,7 @@
                   <label for="product-feedback">
                     Message
                   </label>
-                  <textarea id="product-feedback" name="product_feedback" rows="5"></textarea>
+                  <textarea id="product-feedback" name="product_feedback" rows="5" class="py-2" class="zoom-in"></textarea>
                 </div>
 
                 <div class="d-flex gap-4  mtt-5">
@@ -488,47 +679,48 @@
               <!-- / End Step 3 -->
               <!-- Step 4 -->
               <section id="progress-form__panel-4" role="tabpanel" aria-labelledby="progress-form__tab-4" tabindex="0" hidden class="mtt-5">
-                
-            <?php
+
+                <?php
                 $c = 1;
                 foreach ($questions as $question) : ?>
-                <div class="mb-4">
-                  <p class="fw-semibold"><?php echo $c++; ?> - <?php echo $question->question; ?></p>
-                  <div class="row">
-                    <div class="col-lg-7 col-md-12">
-                      <div class="row">
-                      <div class="col-lg-6">
-                  <?php if ($question->answer1 != '') : ?>
-                    <div class="d-flex align-items-center radio-input"><input type="radio"  name="question_<?php echo $question->id; ?>" value="A"><?php echo $question->answer1; ?></div><br>              
-                  <?php endif; ?>
-                  </div>
-                  <div class="col-lg-6">
-                  <?php if ($question->answer2 != '') : ?>
-                    <div class="d-flex align-items-center radio-input" >
-                      <input type="radio"  name="question_<?php echo $question->id; ?>" value="B"><?php echo $question->answer2; ?></div><br>
-                  <?php endif; ?>
-                  </div>
-                  <div class="col-lg-6">
-                  <?php if ($question->answer3 != '') : ?>
-                    <div class="d-flex align-items-center radio-input" for="Quesion3">
-                      <input type="radio"  name="question_<?php echo $question->id; ?>" value="C"><?php echo $question->answer3; ?>
-                    </div><br>
-                  <?php endif; ?>
-                  </div>
-                  <div class="col-lg-6">
-                  <?php if ($question->answer4 != '') : ?>
-                    <div class="d-flex align-items-center radio-input">
-                      <input type="radio" name="question_<?php echo $question->id; ?>" value="D"><?php echo $question->answer4; ?>
-                    </div>
-                  <?php endif; ?>
-                  </div>
+                  <div class="mb-4">
+                    <p class="fw-semibold"><?php echo $c++; ?> - <?php echo $question->question; ?></p>
+                    <div class="row">
+                      <div class="col-lg-7 col-md-12">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <?php if ($question->answer1 != '') : ?>
+                              <div class="d-flex align-items-center radio-input"><input type="radio" name="question_<?php echo $question->id; ?>" value="A"><?php echo $question->answer1; ?></div><br>
+                            <?php endif; ?>
+                          </div>
+                          <div class="col-lg-6">
+                            <?php if ($question->answer2 != '') : ?>
+                              <div class="d-flex align-items-center radio-input">
+                                <input type="radio" name="question_<?php echo $question->id; ?>" value="B"><?php echo $question->answer2; ?>
+                              </div><br>
+                            <?php endif; ?>
+                          </div>
+                          <div class="col-lg-6">
+                            <?php if ($question->answer3 != '') : ?>
+                              <div class="d-flex align-items-center radio-input" for="Quesion3">
+                                <input type="radio" name="question_<?php echo $question->id; ?>" value="C"><?php echo $question->answer3; ?>
+                              </div><br>
+                            <?php endif; ?>
+                          </div>
+                          <div class="col-lg-6">
+                            <?php if ($question->answer4 != '') : ?>
+                              <div class="d-flex align-items-center radio-input">
+                                <input type="radio" name="question_<?php echo $question->id; ?>" value="D"><?php echo $question->answer4; ?>
+                              </div>
+                            <?php endif; ?>
+                          </div>
+                        </div>
                       </div>
+
                     </div>
-                
-                  </div>
                   </div>
                 <?php endforeach; ?>
-             
+
                 <div class="d-flex gap-4  mtt-5">
                   <button type="button" class="it-btn black-bg" data-action="prev">
                     Back
@@ -541,20 +733,27 @@
 
               <!-- / End Step 4 -->
               <!-- Step 5 -->
-              <section id="progress-form__panel-5" role="tabpanel" aria-labelledby="progress-form__tab-5" tabindex="0" hidden>
-                <div class="mt-3 form__field">
-                  <label for="product-satisfaction">
-                    Your Result
-                    <span data-required="true" aria-hidden="true"></span>
-                  </label>
+              <section id="progress-form__panel-5" role="tabpanel" aria-labelledby="progress-form__tab-5" tabindex="0" class="py-5" hidden>
+                <div class="mt-3 form__field text-center ">
 
+                  <h2 class="mb-4">Your Result</h2>
+
+
+                  <div class="radial-progress m-auto" data-score="4">
+                    <div class="circle">
+                      <div class="mask full">
+                        <div class="fill"></div>
+                      </div>
+                      <div class="mask half">
+                        <div class="fill"></div>
+                        <div class="fill fix"></div>
+                      </div>
+                    </div>
+                    <div class="inset"><span class='big'><?php echo $score; ?></span> <span class='little'>/ 5</span></div>
+                  </div>
                 </div>
 
-                <h1>4/5 </h1>
-
-
-
-                <div class="d-flex gap-4  mtt-5">
+                <div class="d-flex gap-4  mtt-5 justify-content-center">
                   <button type="button" class="it-btn black-bg " data-action="prev">
                     Back
                   </button>
@@ -562,6 +761,7 @@
                     Continue
                   </button>
                 </div>
+
               </section>
               <!-- Thank You -->
               <section id="progress-form__thank-you" hidden>
